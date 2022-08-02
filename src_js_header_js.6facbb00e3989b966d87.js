@@ -103,19 +103,9 @@ window.addEventListener('scroll', function () {
 }, {
   passive: true
 });
-if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser'); // Header width control
-
-var footerContainer = document.querySelector('.footer-container');
-
-var setHeaderWidth = function setHeaderWidth() {//  headerContainer.style.width = footerContainer.offsetWidth + 'px';
-};
-
-window.addEventListener("resize", setHeaderWidth, {
-  passive: true
-});
-setHeaderWidth();
+if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
 
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.66960995ad6887f2b454.js.map
+//# sourceMappingURL=src_js_header_js.6facbb00e3989b966d87.js.map
