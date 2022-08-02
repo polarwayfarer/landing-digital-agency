@@ -6,9 +6,11 @@ It's a landing page build from Figma based on website design ['Digital Agency - 
 
 ### Used stack and tools:
 * HTML5 (+ accessibility, SVG-sprite);
-* CSS3 (+ flex, grid), SASS (SCSS), Autoprefixer;
-* JS (+ ESMA6, RegExp, Intersection Observer API),
-* BEM methodology, Git, Webpack, Babel;
+* CSS3 (+ flex, grid), SASS (SCSS);
+* JS (+ ESMA6, RegExp, Intersection Observer API);
+* BEM methodology;
+* Git, Webpack, npm manager;
+* Babel, Autoprefixer and other packages;
 * pixel-perfect, desktop-first, adaptive web design, cross-browser.
 
 ### Improvements and developments (due to the original design):
