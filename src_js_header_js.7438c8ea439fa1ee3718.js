@@ -82,6 +82,15 @@ window.addEventListener("resize", toggleHeaderStyle, {
   passive: true
 });
 toggleHeaderStyle();
+
+var setHeaderWidth = function setHeaderWidth() {
+  headerContainer.style.width = window.innerWidth + 'px';
+};
+
+window.addEventListener("resize", setHeaderWidth, {
+  passive: true
+});
+setHeaderWidth();
 headerNavList.childNodes.forEach(function (elem) {
   elem.addEventListener("click", closeMenu, {
     passive: true
@@ -108,4 +117,4 @@ window.addEventListener('scroll', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.1bfd17fb8a2dddd10384.js.map
+//# sourceMappingURL=src_js_header_js.7438c8ea439fa1ee3718.js.map
