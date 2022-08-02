@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_modal-window_js"],{
+(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_contact-form_js"],{
 
 /***/ "./src/js/check-validity.js":
 /*!**********************************!*\
@@ -65,16 +65,7 @@ var isContainerOpened = function isContainerOpened(elem) {
 };
 var setBodyOverflow = function setBodyOverflow(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
-}; // Common wisth control
-
-var setBodyWidth = function setBodyWidth() {
-  document.body.style.width = window.innerWidth + 'px';
 };
-
-window.addEventListener("resize", setBodyWidth, {
-  passive: true
-});
-setBodyWidth();
 
 /***/ }),
 
@@ -304,63 +295,7 @@ checkboxInputs.forEach(function (input) {
   });
 });
 
-/***/ }),
-
-/***/ "./src/js/modal-window.js":
-/*!********************************!*\
-  !*** ./src/js/modal-window.js ***!
-  \********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
-/* harmony import */ var _contact_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact-form.js */ "./src/js/contact-form.js");
-
-
-'use strict';
-/* Control of modal window occurrence */
-
-
-var contactButtons = document.querySelectorAll('.contact-button');
-var modalContainer = document.querySelector('.body-container__modal-container');
-var modalWindow = modalContainer.children[0];
-var modalExitButton = modalContainer.children[1];
-var contactExitButton = document.querySelector('.modal-window__svg-button');
-var contactForm = document.forms.contactForm;
-contactButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    modalContainer.classList.remove('display--none');
-    (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(false);
-    contactForm.elements[0].focus();
-  }, {
-    passive: true
-  });
-});
-
-var closeModalWindow = function closeModalWindow() {
-  modalContainer.classList.add('display--none');
-  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(true);
-  _contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactFields.forEach(function (field) {
-    return (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(field);
-  });
-  (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactPrivacyAgreement);
-};
-
-[modalExitButton, contactExitButton].forEach(function (button) {
-  button.addEventListener('click', closeModalWindow, {
-    passive: true
-  });
-}); // A workaround for the case:
-// While resizing with opened modal window, overflowY of the body sometimes returns to "auto", when it's not necessary.
-
-window.addEventListener("resize", function () {
-  if (!(0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isContainerOpened)(modalContainer)) return;
-  if (document.body.style.overflowY === "auto") (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(false);
-}, {
-  passive: true
-});
-
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.f34b2c546b760ffa0290.js.map
+//# sourceMappingURL=src_js_contact-form_js.9bf6d2e40254cdcec568.js.map

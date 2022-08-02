@@ -19,16 +19,7 @@ var isContainerOpened = function isContainerOpened(elem) {
 };
 var setBodyOverflow = function setBodyOverflow(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
-}; // Common wisth control
-
-var setBodyWidth = function setBodyWidth() {
-  document.body.style.width = window.innerWidth + 'px';
 };
-
-window.addEventListener("resize", setBodyWidth, {
-  passive: true
-});
-setBodyWidth();
 
 /***/ }),
 
@@ -112,9 +103,18 @@ window.addEventListener('scroll', function () {
 }, {
   passive: true
 });
-if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
+if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser'); // Header width control
+
+var setBodyWidth = function setBodyWidth() {
+  headerContainer = window.innerWidth + 'px'; //document.body.style.width = window.innerWidth + 'px';
+};
+
+window.addEventListener("resize", setBodyWidth, {
+  passive: true
+});
+setBodyWidth();
 
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.3bb1e11a4bb1aa865a39.js.map
+//# sourceMappingURL=src_js_header_js.4fddbdce7b6d477ed67c.js.map
