@@ -103,19 +103,9 @@ window.addEventListener('scroll', function () {
 }, {
   passive: true
 });
-if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser'); // Common width control
-
-var setBodyWidth = function setBodyWidth() {
-  if (screenMax700.matches) {//  headerContainer.style.width = window.innerWidth / 1.1 + 'px';
-  }
-};
-
-window.addEventListener("resize", setBodyWidth, {
-  passive: true
-});
-setBodyWidth();
+if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
 
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.d824d7b9e9ccd1deae17.js.map
+//# sourceMappingURL=src_js_header_js.6facbb00e3989b966d87.js.map

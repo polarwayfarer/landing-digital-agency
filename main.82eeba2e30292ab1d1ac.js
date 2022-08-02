@@ -101,7 +101,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"bdcf36393929bc6167b6","src_style_main_scss":"6a93d67abc078990029a","src_js_header_js":"d824d7b9e9ccd1deae17","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"66b201cc2635d5adb2ae","src_js_contact-form_js":"9bf6d2e40254cdcec568"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"bdcf36393929bc6167b6","src_style_main_scss":"d75834a7898b8793c6ce","src_js_header_js":"6facbb00e3989b966d87","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"66b201cc2635d5adb2ae","src_js_contact-form_js":"9bf6d2e40254cdcec568"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -318,4 +318,4 @@ __webpack_require__.e(/*! import() */ "src_js_modal-window_js").then(__webpack_r
 __webpack_require__.e(/*! import() */ "src_js_contact-form_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/contact-form.js */ "./src/js/contact-form.js"));
 /******/ })()
 ;
-//# sourceMappingURL=main.ab4048002883e15c3c66.js.map
+//# sourceMappingURL=main.82eeba2e30292ab1d1ac.js.map
