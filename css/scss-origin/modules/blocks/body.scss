@@ -1,0 +1,60 @@
+@use './../mixins' as *;
+@use './../colors' as *;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./../../library.modules/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+
+.body-container {
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  color: $mediumBlack;
+  background-color: $whiteBack;
+
+  overflow: hidden auto;
+
+  &__header-container {
+    .container-wrapper {@include wrapperStyle(54.3em);}
+  }
+  &__main-container {
+    margin-top: 8.53em;
+    .container-wrapper {@include wrapperStyle(53.3em);}
+  }
+  &__footer-container {
+    margin-top: 6.9em;
+    .container-wrapper {@include wrapperStyle(53.7em);}
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .body-container {
+    &__header-container,
+    &__main-container,
+    &__modal-container {
+      .container-wrapper {
+        padding-right: 1.4em;
+        padding-left: 1.4em;
+        font-size: 17.5px;
+      }
+    }
+    &__main-container {margin-top: 6.63em;}
+    &__footer-container {margin-top: 6.2em;}
+  }
+  .container-wrapper {max-width: 380px;}
+}
+
+@media screen and (max-width: 400px) {
+  .body-container {
+    &__header-container,
+    &__footer-container {
+      .container-wrapper {font-size: 16px;}
+    }
+
+    &__main-container,
+    &__modal-container {
+      .container-wrapper {font-size: 14px;}
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@use 'colors' as *;
+
+$focusTransition: box-shadow 0.25s ease-in-out;
+$focusShadow:  0 0 0.6em 0.2em $mediumYellow;

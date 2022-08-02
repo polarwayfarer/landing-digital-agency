@@ -1,0 +1,62 @@
+@use './../mixins' as *;
+@use './../colors' as *;
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+
+  &__modal-window {
+    background-color: $mediumGreen;
+    background: linear-gradient(155deg, $darkBlue, white, white);
+  }
+
+  &__back-close-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(39, 45, 56, 0.7); // $mediumBlack
+    z-index: -1;
+  }
+}
+
+.modal-window {
+  height: 100vh;
+  max-width: 30em;
+  margin-right: 50%;
+  margin-left: auto;
+  padding: 2.3em 2em 1.3em;
+  overflow-y: auto;
+
+  &__svg-button {float: right;}
+
+  &__title,
+  &__contact-form {
+    margin: auto;
+  }
+
+  &__title {
+    text-transform: capitalize;
+    color: white;
+    @include lineFontParams(100%, 1.6em, 700);
+  }
+  &__contact-form {margin-top: 2em;}
+}
+
+@media screen and (max-width: 1050px) {
+  .modal-window {
+    min-width: 30em;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .modal-window {
+    min-width: 100%;
+    &__title {font-size: 1.6em;}
+  }
+}

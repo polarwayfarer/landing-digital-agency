@@ -1,0 +1,50 @@
+@use './../colors' as *;
+
+.contact-section {
+  padding-left: 3.75em;
+  padding-right: 0.7em;
+  border-radius: 1em;
+  text-transform: initial;
+  background-color: $greyBack;
+
+  .content-container {
+    margin-top: 5.05em;
+    .p-item {margin-top: 1.4em;}
+    .contact-button {margin-top: 1.8em;}
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .contact-section {
+    padding: unset;
+    padding: 3.1em 0.5em;
+
+    .img {display: none;}
+
+    .content-container {
+      height: auto;
+      margin: 0 auto;
+
+      .title {
+        max-width: 80%;
+        margin: 0 auto 0;
+      }
+
+      .p-item,
+      .contact-button {
+        font-size: 0.9em;
+      }
+
+      .p-item {
+        margin-top: 2.1em;
+        line-height: 170%;
+      }
+
+      .contact-button {
+        width: 10.6em;
+        margin-top: 2.9em;
+        font-size: 0.9em;
+      }
+    }
+  }
+}

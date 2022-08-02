@@ -1,0 +1,19 @@
+@use 'mixins' as *;
+@use 'colors' as *;
+
+.display--none {display: none !important;}
+
+
+@media screen and (pointer: fine) {
+  .button--common:hover {background-color: $darkBlue;}
+}
+.button--common {
+  height: 3em;
+  border-radius: 0.6em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: $mediumBlue;
+  @include lineFontParams(172%, 0.8em, 600);
+
+  &:focus {background-color: $mediumGreen;}
+}

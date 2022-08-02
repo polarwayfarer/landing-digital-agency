@@ -1,0 +1,33 @@
+@use './../mixins' as *;
+@use './../colors' as *;
+
+.companies-section {
+  max-width: 45.8em;
+
+  &__title {
+    text-align: center;
+    color: $greyTestimonialsTitle;
+    @include lineFontParams(100%, 0.8em, 300);
+  }
+
+  &__ul-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0.85em auto 0;
+    padding: 0.95em 1.2em;
+    border-radius: 0.5em;
+    background-color: $greyBack;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .companies-section {
+    margin-bottom: 4.9em;
+
+    &__ul-list {padding: 1.15em 0 1.15em 0.8em;}
+    .logo-img {width: 75%;}
+  }
+}

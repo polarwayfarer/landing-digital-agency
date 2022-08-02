@@ -1,0 +1,106 @@
+@use './../mixins' as *;
+@use './../colors' as *;
+
+.testimonials-section {
+  .content-container {
+    max-width: 21.8em;
+    margin: 6.9em auto 0;
+    text-align: center;
+
+    .subtitle {
+      margin-bottom: 0.8em;
+      text-transform: uppercase;
+      @include lineFontParams(172%, 0.8em, 400);
+    }
+  }
+
+  .reviews-container {margin-top: 2.2em;}
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75em;
+
+  &__opinion-container {}
+}
+
+@media screen and (max-width: 1150px) {
+  .reviews-container {font-size: 20px;}
+}
+
+@media screen and (max-width: 1050px) {
+  .testimonials-section {
+    max-width: 100%;
+
+    .reviews-container {
+      gap: 1.5em;
+      margin-top: 1em;
+      font-size: inherit;
+    }
+
+    .content-container {
+      .subtitle {
+        margin-bottom: 1.2em;
+        font-size: 0.7em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .testimonials-section .reviews-container {
+    gap: 2.3em;
+  }
+}
+
+.opinion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3em;
+
+  flex-basis: 17.25em;
+  min-height: 16.8em;
+  padding: 1.7em 1.7em 0.5em;
+  border-radius: 1em;
+  background-color: $greyBack;
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    border: 0.05em solid rgba(222, 220, 219, 0.5); // $greyImgBorder
+    border-radius: 50%;
+  }
+
+  &__title,
+  &__p-item {
+    text-align: center;
+  }
+
+  &__title {@include lineFontParams(153%, 0.9em, 400);}
+
+  &__p-item {
+    margin: auto;
+    @include lineFontParams(130%, 0.7em, 300);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .opinion-container {
+    flex-basis: 23.2em;
+    min-height: 19.1em;
+
+    &__title {
+      margin-top: 0.2em;
+      font-size: 1.05em;
+    }
+    &__p-item {
+      font-size: 0.8em;
+    }
+  }
+}

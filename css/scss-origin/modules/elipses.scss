@@ -1,0 +1,51 @@
+$elipseMeausure: 30.95em;
+
+.elipse-1,
+.elipse-2 {
+  z-index: -100;
+
+  position: absolute;
+  width: $elipseMeausure;
+  height: $elipseMeausure;
+
+  filter: blur(15.3em);
+  transition: all 0.4s linear;
+}
+
+.elipse-1 {
+  top: -16.2em;
+  left: calc(50% - $elipseMeausure/2 - 30.0075em);
+
+  background: rgba(142, 173, 213, 0.21); // $mediumBlue
+}
+
+.elipse-2 {
+  top: 61.55em;
+  left: calc(50% - $elipseMeausure/2 + 40.925em);
+
+  background: rgba(142, 173, 213, 0.26); // $mediumBlue
+}
+
+@media screen and (max-width: 700px) {
+  $elipseMeausureSmall: 22.45em;
+
+  .elipse-1,
+  .elipse-2 {
+    width: $elipseMeausureSmall;
+    height: $elipseMeausureSmall;
+  }
+
+  .elipse-1 {
+    left: calc(50% - $elipseMeausureSmall/2 - 5.475em);
+    top: -10.35em;
+
+    background: rgba(142, 173, 213, 0.18); // $mediumBlue
+  }
+
+  .elipse-2 {
+    left: calc(50% - $elipseMeausureSmall/2 + 9.075em);
+    top: 85em;
+
+    background: rgba(142, 173, 213, 0.18); // $mediumBlue
+  }
+}

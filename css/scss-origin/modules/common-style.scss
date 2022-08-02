@@ -1,0 +1,90 @@
+@use 'mixins' as *;
+@use 'colors' as *;
+@use 'vars' as *;
+
+%selectionStyle {
+  color: $mediumBlack;
+  background-color: rgba(243, 222, 194, 0.7); // $lightYellow
+}
+
+::-moz-selection {@extend %selectionStyle;}
+::selection {@extend %selectionStyle;}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.ul-list__li-item {list-style: none;}
+
+.img,
+.svg-img {
+  pointer-events: none;
+}
+
+@media screen and (pointer: fine) {
+  .button,
+  .svg-button,
+  .svg-link,
+  .link {
+    &:hover {
+      box-shadow: 0 0 0.3em 0.3em $lightBlue !important;
+    }
+  }
+  .link:hover {color: $darkRed;}
+}
+
+.button,
+.input,
+.textarea,
+.link,
+.svg-button,
+.svg-link {
+  transition: $focusTransition;
+
+  &:focus {box-shadow: $focusShadow;}
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+
+  &:focus {
+    text-decoration: underline;
+    color: $mediumRed;
+  }
+
+  &--active-tab {font-weight: 600;}
+}
+
+.svg {
+  &-icon,
+  &-button,
+  &-link {
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+  }
+
+  &-button,
+  &-link {
+    display: block;
+  }
+
+  &-button {
+    stroke: $mediumBlack;
+    background-color: unset;
+  }
+
+  &--fill:focus {fill: $mediumRed;}
+  &--stroke:focus {stroke: $mediumRed;}
+}
+
+.input,
+.textarea {
+  padding: 0.2em 0.5em;
+  border-radius: 0.4em;
+}
+.textarea {
+  min-width: 100%;
+  max-width: 100%;
+}

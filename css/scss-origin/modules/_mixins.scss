@@ -1,0 +1,11 @@
+@mixin wrapperStyle($width) {
+  max-width: $width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin lineFontParams($lineHeight, $fSize, $fWeight) {
+  line-height: $lineHeight;
+  font-size: $fSize;
+  font-weight: $fWeight;
+}
