@@ -107,8 +107,7 @@ if (window.pageYOffset > 50) headerContainer.classList.add('header-container--le
 
 var footerContainer = document.querySelector('.footer-container');
 
-var setHeaderWidth = function setHeaderWidth() {
-  headerContainer.style.width = footerContainer.offsetWidth + 'px';
+var setHeaderWidth = function setHeaderWidth() {//  headerContainer.style.width = footerContainer.offsetWidth + 'px';
 };
 
 window.addEventListener("resize", setHeaderWidth, {
@@ -119,4 +118,4 @@ setHeaderWidth();
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.ba4ecd4def139a1455f5.js.map
+//# sourceMappingURL=src_js_header_js.66960995ad6887f2b454.js.map
