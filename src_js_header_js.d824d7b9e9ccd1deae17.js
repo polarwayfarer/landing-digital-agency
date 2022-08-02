@@ -106,7 +106,8 @@ window.addEventListener('scroll', function () {
 if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser'); // Common width control
 
 var setBodyWidth = function setBodyWidth() {
-  headerContainer.style.width = window.innerWidth + 'px';
+  if (screenMax700.matches) {//  headerContainer.style.width = window.innerWidth / 1.1 + 'px';
+  }
 };
 
 window.addEventListener("resize", setBodyWidth, {
@@ -117,4 +118,4 @@ setBodyWidth();
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.010709f89854343ad8c0.js.map
+//# sourceMappingURL=src_js_header_js.d824d7b9e9ccd1deae17.js.map
