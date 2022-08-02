@@ -58,15 +58,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
 /* harmony export */   "setBodyOverflow": function() { return /* binding */ setBodyOverflow; }
 /* harmony export */ });
-
-/* Common functions */
+ // Common functions
 
 var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflow = function setBodyOverflow(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+}; // Common wisth control
+
+var setBodyWidth = function setBodyWidth() {
+  document.body.style.width = window.innerWidth + 'px';
 };
+
+window.addEventListener("resize", setBodyWidth, {
+  passive: true
+});
+setBodyWidth();
 
 /***/ }),
 
@@ -299,4 +307,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.a55fc29ea4133e646cd3.js.map
+//# sourceMappingURL=src_js_contact-form_js.ee7fcf2d6d7ed5870cbe.js.map

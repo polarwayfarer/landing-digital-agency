@@ -58,15 +58,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
 /* harmony export */   "setBodyOverflow": function() { return /* binding */ setBodyOverflow; }
 /* harmony export */ });
-
-/* Common functions */
+ // Common functions
 
 var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflow = function setBodyOverflow(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+}; // Common wisth control
+
+var setBodyWidth = function setBodyWidth() {
+  document.body.style.width = window.innerWidth + 'px';
 };
+
+window.addEventListener("resize", setBodyWidth, {
+  passive: true
+});
+setBodyWidth();
 
 /***/ }),
 
@@ -355,4 +363,4 @@ window.addEventListener("resize", function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.0ebb5c30f5a3b8a38352.js.map
+//# sourceMappingURL=src_js_modal-window_js.f34b2c546b760ffa0290.js.map

@@ -12,15 +12,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
 /* harmony export */   "setBodyOverflow": function() { return /* binding */ setBodyOverflow; }
 /* harmony export */ });
-
-/* Common functions */
+ // Common functions
 
 var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflow = function setBodyOverflow(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+}; // Common wisth control
+
+var setBodyWidth = function setBodyWidth() {
+  document.body.style.width = window.innerWidth + 'px';
 };
+
+window.addEventListener("resize", setBodyWidth, {
+  passive: true
+});
+setBodyWidth();
 
 /***/ }),
 
@@ -82,15 +90,6 @@ window.addEventListener("resize", toggleHeaderStyle, {
   passive: true
 });
 toggleHeaderStyle();
-
-var setHeaderWidth = function setHeaderWidth() {
-  headerContainer.style.width = window.innerWidth + 'px';
-};
-
-window.addEventListener("resize", setHeaderWidth, {
-  passive: true
-});
-setHeaderWidth();
 headerNavList.childNodes.forEach(function (elem) {
   elem.addEventListener("click", closeMenu, {
     passive: true
@@ -113,8 +112,9 @@ window.addEventListener('scroll', function () {
 }, {
   passive: true
 });
+if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
 
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.7438c8ea439fa1ee3718.js.map
+//# sourceMappingURL=src_js_header_js.3bb1e11a4bb1aa865a39.js.map
