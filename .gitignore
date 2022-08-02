@@ -1,8 +1,6 @@
-/library-modules
+/node_modules
 /figma-mockups
+/dist
 
-/css/css
-/css/main.css
-/css/main.css.map
-
-/img/main/unused
+/src/library_modules
+/src/images/main/unused

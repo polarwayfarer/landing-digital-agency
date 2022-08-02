@@ -1,11 +1,6 @@
 @use './../mixins' as *;
 @use './../colors' as *;
 
-@font-face {
-  font-family: 'Inter';
-  src: url('./../../library.modules/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
-}
-
 .body-container {
   font-size: 20px;
   font-family: 'Inter', sans-serif;

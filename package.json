@@ -1,0 +1,50 @@
+{
+  "name": "from-figma-digital-agency",
+  "version": "0.1.0",
+  "description": "It's a landing page build from Figma based on website design 'Digital Agency - Landing Page'.",
+  "homepage": "https://yankaincode.github.io/from-figma-digital-agency",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yankaincode/from-figma-digital-agency.git"
+  },
+  "main": "./src/index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=development&&webpack serve --open",
+    "dev": "set NODE_ENV=development&&webpack",
+    "build": "set NODE_ENV=production&&webpack"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.1%",
+    "IE 8",
+    "IE 9",
+    "IE 10"
+  ],
+  "author": {
+    "name": "Yanka_InCode",
+    "email": "yankaincode@gmail.com",
+    "url": "https://github.com/yankaincode"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "assets-webpack-plugin": "^7.1.1",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.7.2",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
