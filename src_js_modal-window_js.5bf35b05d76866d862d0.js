@@ -56,14 +56,14 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
-/* harmony export */   "setBodyOverflow": function() { return /* binding */ setBodyOverflow; }
+/* harmony export */   "setBodyOverflowY": function() { return /* binding */ setBodyOverflowY; }
 /* harmony export */ });
  // Common functions
 
 var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
-var setBodyOverflow = function setBodyOverflow(isPermitted) {
+var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
 };
 
@@ -321,7 +321,7 @@ var contactForm = document.forms.contactForm;
 contactButtons.forEach(function (button) {
   button.addEventListener('click', function () {
     modalContainer.classList.remove('display--none');
-    (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(false);
+    (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
     contactForm.elements[0].focus();
   }, {
     passive: true
@@ -330,7 +330,7 @@ contactButtons.forEach(function (button) {
 
 var closeModalWindow = function closeModalWindow() {
   modalContainer.classList.add('display--none');
-  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(true);
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(true);
   _contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactFields.forEach(function (field) {
     return (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(field);
   });
@@ -346,7 +346,7 @@ var closeModalWindow = function closeModalWindow() {
 
 window.addEventListener("resize", function () {
   if (!(0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isContainerOpened)(modalContainer)) return;
-  if (document.body.style.overflowY === "auto") (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflow)(false);
+  if (document.body.style.overflowY === "auto") (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
 }, {
   passive: true
 });
@@ -354,4 +354,4 @@ window.addEventListener("resize", function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.66b201cc2635d5adb2ae.js.map
+//# sourceMappingURL=src_js_modal-window_js.5bf35b05d76866d862d0.js.map

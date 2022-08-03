@@ -56,14 +56,14 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
-/* harmony export */   "setBodyOverflow": function() { return /* binding */ setBodyOverflow; }
+/* harmony export */   "setBodyOverflowY": function() { return /* binding */ setBodyOverflowY; }
 /* harmony export */ });
  // Common functions
 
 var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
-var setBodyOverflow = function setBodyOverflow(isPermitted) {
+var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
   document.body.style.overflowY = isPermitted ? "auto" : "hidden";
 };
 
@@ -298,4 +298,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.9bf6d2e40254cdcec568.js.map
+//# sourceMappingURL=src_js_contact-form_js.a9ff2803e00bd2c4cae1.js.map
