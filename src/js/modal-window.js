@@ -1,4 +1,4 @@
-import {isContainerOpened, setBodyOverflow} from "./common.js";
+import {isContainerOpened, setBodyOverflowY} from "./common.js";
 import {contactFields, contactPrivacyAgreement, resetFieldErrors} from "./contact-form.js";
 
 'use strict';
@@ -15,14 +15,14 @@ let contactForm = document.forms.contactForm;
 contactButtons.forEach(button => {
   button.addEventListener('click', function() {
     modalContainer.classList.remove('display--none');
-    setBodyOverflow(false);
+    setBodyOverflowY(false);
     contactForm.elements[0].focus();
   }, {passive: true});
 });
 
 const closeModalWindow = () => {
   modalContainer.classList.add('display--none');
-  setBodyOverflow(true);
+  setBodyOverflowY(true);
   contactFields.forEach(field => resetFieldErrors(field));
   resetFieldErrors(contactPrivacyAgreement);
 };
@@ -36,5 +36,5 @@ const closeModalWindow = () => {
 window.addEventListener("resize", function() {
   if (!isContainerOpened(modalContainer)) return;
 
-  if (document.body.style.overflowY === "auto") setBodyOverflow(false);
+  if (document.body.style.overflowY === "auto") setBodyOverflowY(false);
 }, {passive: true});

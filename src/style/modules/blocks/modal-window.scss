@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: 1000;
 
@@ -26,7 +26,7 @@
 }
 
 .modal-window {
-  height: 100vh;
+  height: 100%;
   max-width: 30em;
   margin-right: 50%;
   margin-left: auto;
@@ -49,14 +49,11 @@
 }
 
 @media screen and (max-width: 1050px) {
-  .modal-window {
-    min-width: 30em;
-    margin-right: auto;
-  }
+  .modal-window {margin-right: auto;}
 }
 @media screen and (max-width: 600px) {
   .modal-window {
-    min-width: 100%;
+    max-width: 100%;
     &__title {font-size: 1.6em;}
   }
 }

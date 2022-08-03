@@ -1,4 +1,4 @@
-import {isContainerOpened, setBodyOverflow} from "./common.js";
+import {isContainerOpened, setBodyOverflowY} from "./common.js";
 
 'use strict';
 
@@ -37,7 +37,7 @@ const closeMenu = () => {
   if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
 
   setMenuButtonAttribs(headerMenuButton, false);
-  setBodyOverflow(true);
+  setBodyOverflowY(true);
 };
 
 const toggleHeaderStyle = () => {
@@ -69,7 +69,7 @@ headerMenuButton.addEventListener('click', function() {
   );
 
   setMenuButtonAttribs(this, isHeaderMenuOpened());
-  setBodyOverflow(!isHeaderMenuOpened());
+  setBodyOverflowY(!isHeaderMenuOpened());
 
 }, {passive: true});
 
@@ -81,3 +81,5 @@ window.addEventListener('scroll', function() {
   headerContainer.classList.toggle('header-container--normal', scrollHeightPos <= 50);
   headerContainer.classList.toggle('header-container--lesser', scrollHeightPos > 50);
 }, {passive: true});
+
+if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');

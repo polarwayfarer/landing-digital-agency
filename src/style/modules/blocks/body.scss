@@ -1,14 +1,14 @@
 @use './../mixins' as *;
 @use './../colors' as *;
 
+body {overflow: hidden auto;}
+
 .body-container {
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   color: $mediumBlack;
   background-color: $whiteBack;
-
-  overflow: hidden auto;
 
   &__header-container {
     .container-wrapper {@include wrapperStyle(54.3em);}
@@ -37,7 +37,6 @@
     &__main-container {margin-top: 6.63em;}
     &__footer-container {margin-top: 6.2em;}
   }
-  .container-wrapper {max-width: 380px;}
 }
 
 @media screen and (max-width: 400px) {
