@@ -306,12 +306,14 @@ var modalContainer = document.querySelector('.body-container__modal-container');
 var modalWindow = modalContainer.children[0];
 var modalExitButton = modalContainer.children[1];
 var contactExitButton = document.querySelector('.modal-window__svg-button');
-var contactForm = document.forms.contactForm;
+var firstSourceLink = document.querySelector('.modal-window__links-container .link');
 contactButtons.forEach(function (button) {
   button.addEventListener('click', function () {
     modalContainer.classList.remove('display--none');
     (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
-    contactForm.elements[0].focus();
+    setTimeout(function () {
+      firstSourceLink.focus();
+    }, 500);
   }, {
     passive: true
   });
@@ -343,4 +345,4 @@ window.addEventListener('resize', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.14864935b73941f6546d.js.map
+//# sourceMappingURL=src_js_modal-window_js.e980afcda9bf27eaa3cd.js.map
