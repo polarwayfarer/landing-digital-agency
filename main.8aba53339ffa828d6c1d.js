@@ -101,7 +101,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"bdcf36393929bc6167b6","src_style_main_scss":"036a5ea9b6bc299a9d0f","src_js_header_js":"ec0c716a633f62db2f67","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"e7c7e4b8cdaff30b6653","src_js_contact-form_js":"b01088d24d189d4e1e42"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"bdcf36393929bc6167b6","src_style_main_scss":"036a5ea9b6bc299a9d0f","src_js_header_js":"ec0c716a633f62db2f67","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"0fa0cf65f7e5838580ce","src_js_contact-form_js":"c792bd4f1e06a4149abe"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -318,4 +318,4 @@ __webpack_require__.e(/*! import() */ "src_js_modal-window_js").then(__webpack_r
 __webpack_require__.e(/*! import() */ "src_js_contact-form_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/contact-form.js */ "./src/js/contact-form.js"));
 /******/ })()
 ;
-//# sourceMappingURL=main.b468cf0f10ee167747d3.js.map
+//# sourceMappingURL=main.8aba53339ffa828d6c1d.js.map

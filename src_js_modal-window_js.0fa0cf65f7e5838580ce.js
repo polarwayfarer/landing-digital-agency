@@ -264,7 +264,6 @@ var assignMailtoText = function assignMailtoText() {
   var mailtoEmail = formData.get('email');
   mailtoName = replaceSpaces(mailtoName);
   mailtoBody = replaceSpaces(mailtoBody);
-  console.log(mailtoBody);
   return mailtoAddress + "?subject=" + mailtoSubject + "&body=Greetings.%0A%0A" + mailtoBody + "%0A%0AСontact person:%20" + mailtoName + "%0AE-mail:%20" + mailtoEmail;
 };
 
@@ -360,4 +359,4 @@ window.addEventListener('resize', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.e7c7e4b8cdaff30b6653.js.map
+//# sourceMappingURL=src_js_modal-window_js.0fa0cf65f7e5838580ce.js.map

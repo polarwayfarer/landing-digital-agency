@@ -264,7 +264,6 @@ var assignMailtoText = function assignMailtoText() {
   var mailtoEmail = formData.get('email');
   mailtoName = replaceSpaces(mailtoName);
   mailtoBody = replaceSpaces(mailtoBody);
-  console.log(mailtoBody);
   return mailtoAddress + "?subject=" + mailtoSubject + "&body=Greetings.%0A%0A" + mailtoBody + "%0A%0AСontact person:%20" + mailtoName + "%0AE-mail:%20" + mailtoEmail;
 };
 
@@ -304,4 +303,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.b01088d24d189d4e1e42.js.map
+//# sourceMappingURL=src_js_contact-form_js.c792bd4f1e06a4149abe.js.map
