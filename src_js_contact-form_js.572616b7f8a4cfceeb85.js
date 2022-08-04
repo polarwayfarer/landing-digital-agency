@@ -42,7 +42,7 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
       break;
   }
 
-  if (!event.key.match(regExpLetters) && event.code !== "ArrowRight" && event.code !== "ArrowLeft" && event.code !== "Backspace" && event.code !== "Delete") event.preventDefault();
+  if (!event.key.match(regExpLetters) && event.code !== 'ArrowRight' && event.code !== 'ArrowLeft' && event.code !== 'Backspace' && event.code !== 'Delete') event.preventDefault();
 };
 
 /***/ }),
@@ -64,7 +64,7 @@ var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
-  document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+  document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
 
 /***/ }),
@@ -252,17 +252,12 @@ var checkAllContactFields = function checkAllContactFields() {
 };
 
 var assignMailtoText = function assignMailtoText() {
-  var formData = new FormData(contactForm);
-  formData["delete"]("privacyAgreement");
   var mailtoAddress = "mailto:yankaincode@gmail.com";
   var mailtoSubject = "Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode";
-  var mailtoBody = formData.get('message');
-  var mailtoName = formData.get('name');
-  var mailtoEmail = formData.get('email');
-  return mailtoAddress + "?subject=" + mailtoSubject + '&body=Greetings!%0A%0A' + mailtoBody + '%0A%0AСontact person: ' + mailtoName + '%0AE-mail: ' + mailtoEmail;
+  return mailtoAddress + "?subject=" + mailtoSubject + '&body=Greetings!%0A%0A' + contactMessage.value + '%0A%0AСontact person: ' + contactName.value + '%0AE-mail: ' + contactEmail.value;
 };
 
-contactForm.addEventListener("submit", function () {
+contactForm.addEventListener('submit', function () {
   checkAllContactFields();
   contactForm.action = assignMailtoText();
 }, {
@@ -298,4 +293,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.a9ff2803e00bd2c4cae1.js.map
+//# sourceMappingURL=src_js_contact-form_js.572616b7f8a4cfceeb85.js.map

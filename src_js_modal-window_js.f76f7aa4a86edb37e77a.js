@@ -42,7 +42,7 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
       break;
   }
 
-  if (!event.key.match(regExpLetters) && event.code !== "ArrowRight" && event.code !== "ArrowLeft" && event.code !== "Backspace" && event.code !== "Delete") event.preventDefault();
+  if (!event.key.match(regExpLetters) && event.code !== 'ArrowRight' && event.code !== 'ArrowLeft' && event.code !== 'Backspace' && event.code !== 'Delete') event.preventDefault();
 };
 
 /***/ }),
@@ -64,7 +64,7 @@ var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
-  document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+  document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
 
 /***/ }),
@@ -252,17 +252,12 @@ var checkAllContactFields = function checkAllContactFields() {
 };
 
 var assignMailtoText = function assignMailtoText() {
-  var formData = new FormData(contactForm);
-  formData["delete"]("privacyAgreement");
   var mailtoAddress = "mailto:yankaincode@gmail.com";
   var mailtoSubject = "Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode";
-  var mailtoBody = formData.get('message');
-  var mailtoName = formData.get('name');
-  var mailtoEmail = formData.get('email');
-  return mailtoAddress + "?subject=" + mailtoSubject + '&body=Greetings!%0A%0A' + mailtoBody + '%0A%0AСontact person: ' + mailtoName + '%0AE-mail: ' + mailtoEmail;
+  return mailtoAddress + "?subject=" + mailtoSubject + '&body=Greetings!%0A%0A' + contactMessage.value + '%0A%0AСontact person: ' + contactName.value + '%0AE-mail: ' + contactEmail.value;
 };
 
-contactForm.addEventListener("submit", function () {
+contactForm.addEventListener('submit', function () {
   checkAllContactFields();
   contactForm.action = assignMailtoText();
 }, {
@@ -342,11 +337,11 @@ var closeModalWindow = function closeModalWindow() {
     passive: true
   });
 }); // A workaround for the case:
-// While resizing with opened modal window, overflowY of the body sometimes returns to "auto", when it's not necessary.
+// While resizing with opened modal window, overflowY of the body sometimes returns to 'auto', when it's not necessary.
 
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   if (!(0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isContainerOpened)(modalContainer)) return;
-  if (document.body.style.overflowY === "auto") (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
+  if (document.body.style.overflowY === 'auto') (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
 }, {
   passive: true
 });
@@ -354,4 +349,4 @@ window.addEventListener("resize", function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.5bf35b05d76866d862d0.js.map
+//# sourceMappingURL=src_js_modal-window_js.f76f7aa4a86edb37e77a.js.map

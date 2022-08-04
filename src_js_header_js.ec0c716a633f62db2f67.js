@@ -18,7 +18,7 @@ var isContainerOpened = function isContainerOpened(elem) {
   return !elem.classList.contains('display--none');
 };
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
-  document.body.style.overflowY = isPermitted ? "auto" : "hidden";
+  document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
 
 /***/ }),
@@ -39,7 +39,7 @@ var headerContainer = document.querySelector('.header-container');
 var headerNavContainer = document.querySelector('.header-container__nav-container');
 var headerNavList = headerNavContainer.children[0];
 var headerMenuButton = document.querySelector('.header-container__svg-button');
-var screenMax700 = window.matchMedia("(max-width: 700px)");
+var screenMax700 = window.matchMedia('(max-width: 700px)');
 
 var isHeaderMenuOpened = function isHeaderMenuOpened() {
   return (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isContainerOpened)(headerNavContainer);
@@ -48,12 +48,12 @@ var isHeaderMenuOpened = function isHeaderMenuOpened() {
 var setMenuButtonAttribs = function setMenuButtonAttribs(button, isMenuOpened) {
   button.setAttribute('aria-pressed', isMenuOpened);
   button.setAttribute('aria-expanded', isMenuOpened);
-  var finLabel = isMenuOpened ? "Close" : "Open";
-  finLabel += " the navigation list";
+  var finLabel = isMenuOpened ? 'Close' : 'Open';
+  finLabel += ' the navigation list';
   button.setAttribute('aria-label', finLabel);
-  var finIconHref = isMenuOpened ? "#icon-exit" : "#icon-menu";
+  var finIconHref = isMenuOpened ? '#icon-exit' : '#icon-menu';
   var buttonUse = button.children[0].children[0];
-  buttonUse.setAttribute("href", finIconHref);
+  buttonUse.setAttribute('href', finIconHref);
 };
 
 var closeMenu = function closeMenu() {
@@ -77,12 +77,12 @@ var toggleHeaderStyle = function toggleHeaderStyle() {
   }
 };
 
-window.addEventListener("resize", toggleHeaderStyle, {
+window.addEventListener('resize', toggleHeaderStyle, {
   passive: true
 });
 toggleHeaderStyle();
 headerNavList.childNodes.forEach(function (elem) {
-  elem.addEventListener("click", closeMenu, {
+  elem.addEventListener('click', closeMenu, {
     passive: true
   });
 });
@@ -108,4 +108,4 @@ if (window.pageYOffset > 50) headerContainer.classList.add('header-container--le
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.b01868fd74ed638b0a92.js.map
+//# sourceMappingURL=src_js_header_js.ec0c716a633f62db2f67.js.map
