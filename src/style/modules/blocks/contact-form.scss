@@ -53,6 +53,8 @@
   border-radius: 0.5em;
   text-align: justify;
   color: $mediumBlack;
+
+  &__link {color: $darkYellow;}
 }
 
 .required-container__info-text {@include lineFontParams(100%, 0.8em, 400);}
@@ -96,6 +98,7 @@
   transition: $focusTransition;
 
   .checkbox-label {
+    padding-right: 0.5em;
     padding-left: 0.5em;
     @include lineFontParams(140%, 0.8em, 600);
   }

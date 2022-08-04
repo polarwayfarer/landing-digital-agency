@@ -38,7 +38,7 @@
         </button>
         <h2 class="modal-window__title title">Contact us</h2>
 
-        <form class="modal-window__contact-form contact-form" name="contactForm"  action="" method="post" enctype="multipart/form-data" novalidate>
+        <form class="modal-window__contact-form contact-form" name="contactForm" action="" method="post" novalidate autocomplete="off">
           <div class="contact-form__required-container required-container">
             <span class="required-container__info-text info-text"><strong>All fields are required</strong></span>
           </div>
@@ -64,7 +64,11 @@
           </div>
 
           <div class="contact-form__partition partition">
-            <p id="privacyAgreementInfo" tabindex="-1" class="partition__privacy-info privacy-info info-text">This form doesn't save or send any data on a server-side, it works only on a client-side. After click on a 'Send the letter' button below, your browser will open your e-mail application, and the letter will be filled with information you've attached through the form.</p>
+            <p id="privacyAgreementInfo" tabindex="-1" class="partition__privacy-info privacy-info info-text">
+              The form uses <a class="info-text__link link" href="https://formspree.io/" rel="nofollow noopener noreferrer">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send its data to Yanka_InCode (the developer of this website).
+              <br />This website doesn’t use cookies: doesn't gather, save or send any information about your device and activity. Data exchange is safe on both sides through HTTPS secure communication.
+              <br />But, nevertheless, it's a training front-end pet-project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and e-mail addresses).
+            </p>
 
             <div class="partition__checkbox-container checkbox-container">
               <input id="privacyAgreement" name="privacyAgreement" type="checkbox" aria-labelledby="privacyAgreementLabel" aria-describedby="privacyAgreementInfo" class="checkbox-container__checkbox-input checkbox-input" required />

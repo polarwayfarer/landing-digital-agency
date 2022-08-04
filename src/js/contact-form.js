@@ -153,29 +153,9 @@ const checkAllContactFields = () => {
   }
 };
 
-const replaceSpaces = (str) => str.replace(/\s/g, '%20');
-
-const assignMailtoText = () => {
-  let formData = new FormData(contactForm);
-
-  let mailtoAddress = "mailto:yankaincode@gmail.com";
-  let mailtoSubject = "Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode";
-  let mailtoBody = formData.get('message');
-  let mailtoName = formData.get('name');
-  let mailtoEmail = formData.get('email');
-
-  mailtoName = replaceSpaces(mailtoName);
-  mailtoBody = replaceSpaces(mailtoBody);
-
-  return mailtoAddress + "?subject=" + mailtoSubject
-    + "&body=Greetings.%0A%0A" + mailtoBody
-    + "%0A%0AСontact person:%20" + mailtoName
-    + "%0AE-mail:%20" + mailtoEmail;
-};
-
 contactForm.addEventListener('submit', function() {
   checkAllContactFields();
-  contactForm.action = assignMailtoText();
+  contactForm.setAttribute('action', 'https://formspree.io/f/mzbwpyjp');
 }, {passive: false});
 
 // Manage keydown for name and email input fields
