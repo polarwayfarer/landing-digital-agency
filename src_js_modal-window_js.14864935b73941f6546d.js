@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_contact-form_js"],{
+(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_modal-window_js"],{
 
 /***/ "./src/js/check-validity.js":
 /*!**********************************!*\
@@ -251,25 +251,9 @@ var checkAllContactFields = function checkAllContactFields() {
   }
 };
 
-var replaceSpaces = function replaceSpaces(str) {
-  return str.replace(/\s/g, '%20');
-};
-
-var assignMailtoText = function assignMailtoText() {
-  var formData = new FormData(contactForm);
-  var mailtoAddress = "mailto:yankaincode@gmail.com";
-  var mailtoSubject = "Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode";
-  var mailtoBody = formData.get('message');
-  var mailtoName = formData.get('name');
-  var mailtoEmail = formData.get('email');
-  mailtoName = replaceSpaces(mailtoName);
-  mailtoBody = replaceSpaces(mailtoBody);
-  return mailtoAddress + "?subject=" + mailtoSubject + "&body=Greetings.%0A%0A" + mailtoBody + "%0A%0AСontact person:%20" + mailtoName + "%0AE-mail:%20" + mailtoEmail;
-};
-
 contactForm.addEventListener('submit', function () {
   checkAllContactFields();
-  contactForm.action = assignMailtoText();
+  contactForm.setAttribute('action', 'https://formspree.io/f/mzbwpyjp');
 }, {
   passive: false
 }); // Manage keydown for name and email input fields
@@ -300,7 +284,63 @@ checkboxInputs.forEach(function (input) {
   });
 });
 
+/***/ }),
+
+/***/ "./src/js/modal-window.js":
+/*!********************************!*\
+  !*** ./src/js/modal-window.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
+/* harmony import */ var _contact_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact-form.js */ "./src/js/contact-form.js");
+
+
+'use strict';
+/* Control of modal window occurrence */
+
+
+var contactButtons = document.querySelectorAll('.contact-button');
+var modalContainer = document.querySelector('.body-container__modal-container');
+var modalWindow = modalContainer.children[0];
+var modalExitButton = modalContainer.children[1];
+var contactExitButton = document.querySelector('.modal-window__svg-button');
+var contactForm = document.forms.contactForm;
+contactButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    modalContainer.classList.remove('display--none');
+    (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
+    contactForm.elements[0].focus();
+  }, {
+    passive: true
+  });
+});
+
+var closeModalWindow = function closeModalWindow() {
+  modalContainer.classList.add('display--none');
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(true);
+  _contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactFields.forEach(function (field) {
+    return (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(field);
+  });
+  (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactPrivacyAgreement);
+};
+
+[modalExitButton, contactExitButton].forEach(function (button) {
+  button.addEventListener('click', closeModalWindow, {
+    passive: true
+  });
+}); // A workaround for the case:
+// While resizing with opened modal window, overflowY of the body sometimes returns to 'auto', when it's not necessary.
+
+window.addEventListener('resize', function () {
+  if (!(0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isContainerOpened)(modalContainer)) return;
+  if (document.body.style.overflowY === 'auto') (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
+}, {
+  passive: true
+});
+
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.c792bd4f1e06a4149abe.js.map
+//# sourceMappingURL=src_js_modal-window_js.14864935b73941f6546d.js.map
