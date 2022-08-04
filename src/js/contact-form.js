@@ -1,5 +1,5 @@
-import {isContainerOpened} from "./common.js";
-import {isValid, manageKeydown} from "./check-validity.js";
+import {isContainerOpened} from './common.js';
+import {isValid, manageKeydown} from './check-validity.js';
 
 'use strict';
 
@@ -153,23 +153,27 @@ const checkAllContactFields = () => {
   }
 };
 
+const replaceSpaces = (str) => str.replace(/\s/g, '%20');
+
 const assignMailtoText = () => {
   let formData = new FormData(contactForm);
-  formData.delete("privacyAgreement");
 
-  let mailtoAddress = `mailto:yankaincode@gmail.com`;
-  let mailtoSubject = `Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode`;
+  let mailtoAddress = "mailto:yankaincode@gmail.com";
+  let mailtoSubject = "Keep in touch | Project 'From Figma: Digital Agency' by Yanka_InCode";
   let mailtoBody = formData.get('message');
   let mailtoName = formData.get('name');
   let mailtoEmail = formData.get('email');
 
-  return mailtoAddress + `?subject=` + mailtoSubject
-    + '&body=Greetings!%0A%0A' + mailtoBody
-    + '%0A%0AСontact person: ' + mailtoName
-    + '%0AE-mail: ' + mailtoEmail;
+  mailtoName = replaceSpaces(mailtoName);
+  mailtoBody = replaceSpaces(mailtoBody);
+
+  return mailtoAddress + "?subject=" + mailtoSubject
+    + "&body=Greetings.%0A%0A" + mailtoBody
+    + "%0A%0AСontact person:%20" + mailtoName
+    + "%0AE-mail:%20" + mailtoEmail;
 };
 
-contactForm.addEventListener("submit", function() {
+contactForm.addEventListener('submit', function() {
   checkAllContactFields();
   contactForm.action = assignMailtoText();
 }, {passive: false});

@@ -3,6 +3,7 @@
 
 .companies-section {
   max-width: 45.8em;
+  margin-top: 7.85em;
 
   &__title {
     text-align: center;
@@ -25,7 +26,7 @@
 
 @media screen and (max-width: 1050px) {
   .companies-section {
-    margin-bottom: 4.9em;
+    margin-top: 6.5em;
 
     &__ul-list {padding: 1.15em 0 1.15em 0.8em;}
     .logo-img {width: 75%;}

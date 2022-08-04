@@ -28,7 +28,7 @@ export const manageKeydown = (inputTypeStr) => {
   }
 
   if (!event.key.match(regExpLetters)
-  && event.code !== "ArrowRight" && event.code !== "ArrowLeft"
-  && event.code !== "Backspace" && event.code !== "Delete")
+  && event.code !== 'ArrowRight' && event.code !== 'ArrowLeft'
+  && event.code !== 'Backspace' && event.code !== 'Delete')
     event.preventDefault();
 };

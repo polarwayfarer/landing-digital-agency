@@ -8,5 +8,5 @@ export const isContainerOpened = elem => {
 
 export const setBodyOverflowY = isPermitted => {
   document.body.style.overflowY =
-    (isPermitted) ? "auto" : "hidden";
+    (isPermitted) ? 'auto' : 'hidden';
 };

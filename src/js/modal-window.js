@@ -1,5 +1,5 @@
-import {isContainerOpened, setBodyOverflowY} from "./common.js";
-import {contactFields, contactPrivacyAgreement, resetFieldErrors} from "./contact-form.js";
+import {isContainerOpened, setBodyOverflowY} from './common.js';
+import {contactFields, contactPrivacyAgreement, resetFieldErrors} from './contact-form.js';
 
 'use strict';
 
@@ -32,9 +32,9 @@ const closeModalWindow = () => {
 });
 
 // A workaround for the case:
-// While resizing with opened modal window, overflowY of the body sometimes returns to "auto", when it's not necessary.
-window.addEventListener("resize", function() {
+// While resizing with opened modal window, overflowY of the body sometimes returns to 'auto', when it's not necessary.
+window.addEventListener('resize', function() {
   if (!isContainerOpened(modalContainer)) return;
 
-  if (document.body.style.overflowY === "auto") setBodyOverflowY(false);
+  if (document.body.style.overflowY === 'auto') setBodyOverflowY(false);
 }, {passive: true});

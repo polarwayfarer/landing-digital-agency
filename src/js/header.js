@@ -1,4 +1,4 @@
-import {isContainerOpened, setBodyOverflowY} from "./common.js";
+import {isContainerOpened, setBodyOverflowY} from './common.js';
 
 'use strict';
 
@@ -9,7 +9,7 @@ let headerNavContainer = document.querySelector('.header-container__nav-containe
 let headerNavList = headerNavContainer.children[0];
 let headerMenuButton = document.querySelector('.header-container__svg-button');
 
-const screenMax700 = window.matchMedia("(max-width: 700px)");
+const screenMax700 = window.matchMedia('(max-width: 700px)');
 
 const isHeaderMenuOpened = () => {
   return isContainerOpened(headerNavContainer)
@@ -19,13 +19,13 @@ const setMenuButtonAttribs = (button, isMenuOpened) => {
   button.setAttribute('aria-pressed', isMenuOpened);
   button.setAttribute('aria-expanded', isMenuOpened);
 
-  let finLabel = (isMenuOpened) ? "Close" : "Open";
-  finLabel += " the navigation list";
+  let finLabel = (isMenuOpened) ? 'Close' : 'Open';
+  finLabel += ' the navigation list';
   button.setAttribute('aria-label', finLabel);
 
-  let finIconHref = (isMenuOpened) ? "#icon-exit" : "#icon-menu";
+  let finIconHref = (isMenuOpened) ? '#icon-exit' : '#icon-menu';
   let buttonUse = button.children[0].children[0];
-  buttonUse.setAttribute("href", finIconHref);
+  buttonUse.setAttribute('href', finIconHref);
 };
 
 const closeMenu = () => {
@@ -53,11 +53,11 @@ const toggleHeaderStyle = () => {
   }
 };
 
-window.addEventListener("resize", toggleHeaderStyle, {passive: true});
+window.addEventListener('resize', toggleHeaderStyle, {passive: true});
 toggleHeaderStyle();
 
 headerNavList.childNodes.forEach( elem => {
-  elem.addEventListener("click", closeMenu, {passive: true});
+  elem.addEventListener('click', closeMenu, {passive: true});
 });
 
 headerMenuButton.addEventListener('click', function() {

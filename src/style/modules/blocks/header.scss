@@ -66,7 +66,7 @@ $commonHeaderTop: 2.3em;
 @media screen and (max-width: 700px) {
   .header-container{
     &__logo-link {
-    padding-left: unset;
+    margin-left: unset;
     text-transform: capitalize;
     font-size: 0.8em;
     }

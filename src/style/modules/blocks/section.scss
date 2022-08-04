@@ -4,7 +4,6 @@
 .section {
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 6.7em;
   text-transform: capitalize;
 
   .contact-button {width: 10.45em;}
@@ -16,12 +15,13 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  &--common-top-gap {margin-top: 6.7em;}
 }
 
 @media screen and (max-width: 1050px) {
   .section {
     max-width: 35em;
-    margin-bottom: 7.05em;
 
     .content-container__p-item {max-width: 30em;}
 
@@ -32,10 +32,13 @@
 
       .title {font-size: 1.85em;}
       .img {
-        margin: 1.1em auto 0;
+        margin: 1.3em auto 0;
       }
     }
+
+    &--common-top-gap {margin-top: 7em;}
   }
+  .about-section {margin-top: 5em;}
   .custom-section {flex-direction: column;}
 }
 
@@ -77,19 +80,20 @@
     flex-basis: unset;
     margin-top: unset;
 
+    & > * {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
     &__title {
       line-height: 100%;
       font-size: 1.8em;
     }
     &__p-item {
       max-width: 100%;
-      margin: 2.6em auto 0;
+      margin-top: 2.6em;
       line-height: 196%;
     }
-    &__svg-link {
-      margin-right: auto;
-      margin-left: auto;
-      transform:rotate(0deg);
-    }
+    &__svg-link {transform:rotate(0deg);}
   }
 }
