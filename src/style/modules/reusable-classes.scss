@@ -1,8 +1,18 @@
 @use 'mixins' as *;
 @use 'colors' as *;
 
-.display--none {display: none !important;}
+.display {
+  &--none {display: none !important;}
 
+  &--hidden {
+    position: absolute;
+    top: auto;
+    left: -1000000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}
 
 @media screen and (pointer: fine) {
   .button--common:hover {background-color: $darkBlue;}
@@ -19,4 +29,9 @@
   @include lineFontParams(172%, 0.8em, 600);
 
   &:focus {background-color: $mediumGreen;}
+}
+
+.links-container {
+  .title {@include lineFontParams(153%, 0.9em, 700);}
+  .li-item {@include lineFontParams(100%, 0.8em, 300);}
 }

@@ -10,13 +10,17 @@ let modalContainer = document.querySelector('.body-container__modal-container');
 let modalWindow = modalContainer.children[0];
 let modalExitButton = modalContainer.children[1];
 let contactExitButton = document.querySelector('.modal-window__svg-button');
-let contactForm = document.forms.contactForm;
+let firstSourceLink = document.querySelector('.modal-window__links-container .link');
 
 contactButtons.forEach(button => {
   button.addEventListener('click', function() {
     modalContainer.classList.remove('display--none');
     setBodyOverflowY(false);
-    contactForm.elements[0].focus();
+    
+    setTimeout(function() {
+      firstSourceLink.focus();
+    }, 500);
+
   }, {passive: true});
 });
 

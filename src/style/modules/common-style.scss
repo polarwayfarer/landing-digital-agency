@@ -30,7 +30,12 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 0 0.3em 0.3em $lightBlue !important;
     }
   }
-  .link:hover {color: $darkRed;}
+  
+  .link {
+    &:hover {color: $darkRed;}
+
+    &--white-back:hover {background-color: white;}
+  }
 }
 
 .button,
@@ -54,6 +59,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &--active-tab {font-weight: 600;}
+
+  &--white-back:focus {background-color: white;}
 }
 
 .svg {

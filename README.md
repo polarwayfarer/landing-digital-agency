@@ -14,7 +14,7 @@ It's a landing page build from Figma based on website design ['Digital Agency - 
 * pixel-perfect, desktop-first, adaptive web design, cross-browser.
 
 ### Improvements and developments (due to the original design):
-* added modal window with a Contact Form for "Contact us" buttons, full data validity check before submitting the Form, sending form to my email through [Formspree](https://formspree.io/);
+* added modal window with a Contact Form for "Contact us" buttons, full data validity check before submitting the Form and sending form to me, Yanka_InCode, through [Formspree](https://formspree.io/);
 * created style of the open menu for mobile version, header on the scroll, selection of interactive elements;
 * made a tablet version.
 

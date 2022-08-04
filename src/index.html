@@ -31,14 +31,28 @@
 
     <div class="body-container__modal-container modal-container display--none">
       <div class="modal-container__modal-window modal-window container-wrapper">
-        <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact form">
+        <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
           <svg class="svg-button__svg-icon svg-icon " height="24" width="24" aria-hidden="true">
             <use class="svg-icon__svg-use svg-use" href="#icon-exit"></use>
           </svg>
         </button>
+
         <h2 class="modal-window__title title">Contact us</h2>
 
+        <div class="modal-window__links-container links-container">
+          <h3 class="links-container__title title">Source links</h3>
+          <ul class="links-container__ul-list ul-list ul-list--row">
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://github.com/yankaincode/from-figma-digital-agency" aria-label="Go to the source code of the website on GitHub" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://www.figma.com/community/file/1117815114206690225" aria-label="Go to the original design of the website on Figma" target="_blank" rel="noopener">Figma</a>
+            </li>
+          </ul>
+        </div>
+
         <form class="modal-window__contact-form contact-form" name="contactForm" action="" method="post" novalidate autocomplete="off">
+          <h3 class="contact-form__title title display--hidden">Contact form</h3>
           <div class="contact-form__required-container required-container">
             <span class="required-container__info-text info-text"><strong>All fields are required</strong></span>
           </div>
@@ -65,9 +79,9 @@
 
           <div class="contact-form__partition partition">
             <p id="privacyAgreementInfo" tabindex="-1" class="partition__privacy-info privacy-info info-text">
-              The form uses <a class="info-text__link link" href="https://formspree.io/" rel="nofollow noopener noreferrer">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send its data to Yanka_InCode (the developer of this website).
-              <br />This website doesn’t use cookies: doesn't gather, save or send any information about your device and activity. Data exchange is safe on both sides through HTTPS secure communication.
-              <br />But, nevertheless, it's a training front-end pet-project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and e-mail addresses).
+              The form uses <a class="info-text__link link" href="https://formspree.io/" aria-label="An official website of the email service Formspree" target="_blank" rel="noopener">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send the inputted data to <a class="info-text__link link" href="https://github.com/yankaincode" aria-label="Yanka_InCode on GitHub" target="_blank" rel="noopener">Yanka_InCode</a> (the developer of this website).
+              <br />Sending data via this form is safe on both sides through HTTPS secure communication. Also, this website doesn’t use cookies: doesn't gather, save or send any information about your device and activity.
+              <br />But, nevertheless, it's a training front-end pet-project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and email addresses).
             </p>
 
             <div class="partition__checkbox-container checkbox-container">
@@ -77,9 +91,11 @@
           </div>
 
           <input class="contact-form__submit-button submit-button button button--common" type="submit" name="submit" value="Send the letter" />
+
         </form>
       </div>
-      <button class="modal-container__back-close-button back-close-button" tabindex="-1" aria-hidden="true"></button>
+
+      <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
     </div>
 
     <header class="body-container__header-container header-container header-container--normal">
