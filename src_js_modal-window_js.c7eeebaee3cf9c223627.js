@@ -306,14 +306,10 @@ var modalContainer = document.querySelector('.body-container__modal-container');
 var modalWindow = modalContainer.children[0];
 var modalExitButton = modalContainer.children[1];
 var contactExitButton = document.querySelector('.modal-window__svg-button');
-var firstSourceLink = document.querySelector('.modal-window__links-container .link');
 contactButtons.forEach(function (button) {
   button.addEventListener('click', function () {
     modalContainer.classList.remove('display--none');
     (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
-    setTimeout(function () {
-      firstSourceLink.focus();
-    }, 500);
   }, {
     passive: true
   });
@@ -345,4 +341,4 @@ window.addEventListener('resize', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.e980afcda9bf27eaa3cd.js.map
+//# sourceMappingURL=src_js_modal-window_js.c7eeebaee3cf9c223627.js.map
