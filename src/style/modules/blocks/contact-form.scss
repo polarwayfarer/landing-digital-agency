@@ -115,8 +115,5 @@
   background-color: $darkRed;
   @include lineFontParams(150%, 0.7em, 400);
 
-  &--checkbox {
-    margin-top: 0.5em;
-    border-radius: 1em;
-  }
+  &--checkbox {border-radius: 1em;}
 }

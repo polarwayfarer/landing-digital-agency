@@ -10,3 +10,5 @@ export const setBodyOverflowY = isPermitted => {
   document.body.style.overflowY =
     (isPermitted) ? 'auto' : 'hidden';
 };
+
+export const isMobileDevice = window.matchMedia('(pointer: coarse)').matches;

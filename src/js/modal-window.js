@@ -7,14 +7,16 @@ import {contactFields, contactPrivacyAgreement, resetFieldErrors} from './contac
 
 let contactButtons = document.querySelectorAll('.contact-button');
 let modalContainer = document.querySelector('.body-container__modal-container');
-let modalWindow = modalContainer.children[0];
-let modalExitButton = modalContainer.children[1];
-let contactExitButton = document.querySelector('.modal-window__svg-button');
+let modalWindow = document.querySelector('.modal-container__modal-window');
+let modalBackExitButton = document.querySelector('.modal-container__back-close-button');
+let modalSvgExitButton = document.querySelector('.modal-window__svg-button');
 
 contactButtons.forEach(button => {
   button.addEventListener('click', function() {
     modalContainer.classList.remove('display--none');
     setBodyOverflowY(false);
+
+    modalSvgExitButton.focus();
   }, {passive: true});
 });
 
@@ -25,7 +27,7 @@ const closeModalWindow = () => {
   resetFieldErrors(contactPrivacyAgreement);
 };
 
-[modalExitButton, contactExitButton].forEach(button => {
+[modalBackExitButton, modalSvgExitButton].forEach(button => {
   button.addEventListener('click', closeModalWindow, {passive: true});
 });
 

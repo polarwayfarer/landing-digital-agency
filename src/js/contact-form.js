@@ -1,4 +1,4 @@
-import {isContainerOpened} from './common.js';
+import {isContainerOpened, isMobileDevice} from './common.js';
 import {isValid, manageKeydown} from './check-validity.js';
 
 'use strict';
@@ -130,7 +130,6 @@ contactEmail.addEventListener('blur', function() {checkField(contactEmail, 'emai
 contactMessage.addEventListener('blur', function() {checkText(contactMessage)}, {passive: true});
 
 // Check all fields before submitting and assign a mailto action to the form
-
 const checkAllContactFields = () => {
   contactFields.forEach(field => checkEmptyInput(field));
 
@@ -139,17 +138,17 @@ const checkAllContactFields = () => {
   checkField(contactEmail, 'email');
   checkText(contactMessage);
 
-  if (!contactPrivacyAgreement.checked) {
-    contactPrivacyAgreement.focus();
-    event.preventDefault();
-  }
-
   for (let i = 0; i < contactFields.length; i++) {
     if (contactFields[i].classList.contains('field--error')) {
-      contactFields[i].focus();
+      if (!isMobileDevice) contactFields[i].focus();
       event.preventDefault();
       return;
     }
+  }
+
+  if (!contactPrivacyAgreement.checked) {
+    if (!isMobileDevice) contactPrivacyAgreement.focus();
+    event.preventDefault();
   }
 };
 
