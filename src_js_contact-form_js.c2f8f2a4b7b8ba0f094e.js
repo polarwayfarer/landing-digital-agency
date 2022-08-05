@@ -56,6 +56,7 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
+/* harmony export */   "isMobileDevice": function() { return /* binding */ isMobileDevice; },
 /* harmony export */   "setBodyOverflowY": function() { return /* binding */ setBodyOverflowY; }
 /* harmony export */ });
  // Common functions
@@ -66,6 +67,7 @@ var isContainerOpened = function isContainerOpened(elem) {
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
   document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
+var isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
 
 /***/ }),
 
@@ -237,17 +239,17 @@ var checkAllContactFields = function checkAllContactFields() {
   checkField(contactEmail, 'email');
   checkText(contactMessage);
 
-  if (!contactPrivacyAgreement.checked) {
-    contactPrivacyAgreement.focus();
-    event.preventDefault();
-  }
-
   for (var i = 0; i < contactFields.length; i++) {
     if (contactFields[i].classList.contains('field--error')) {
-      contactFields[i].focus();
+      if (!_common_js__WEBPACK_IMPORTED_MODULE_0__.isMobileDevice) contactFields[i].focus();
       event.preventDefault();
       return;
     }
+  }
+
+  if (!contactPrivacyAgreement.checked) {
+    if (!_common_js__WEBPACK_IMPORTED_MODULE_0__.isMobileDevice) contactPrivacyAgreement.focus();
+    event.preventDefault();
   }
 };
 
@@ -287,4 +289,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.63a6da64e39c6d5c8a4e.js.map
+//# sourceMappingURL=src_js_contact-form_js.c2f8f2a4b7b8ba0f094e.js.map

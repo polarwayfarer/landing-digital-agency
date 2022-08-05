@@ -56,6 +56,7 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
+/* harmony export */   "isMobileDevice": function() { return /* binding */ isMobileDevice; },
 /* harmony export */   "setBodyOverflowY": function() { return /* binding */ setBodyOverflowY; }
 /* harmony export */ });
  // Common functions
@@ -66,6 +67,7 @@ var isContainerOpened = function isContainerOpened(elem) {
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
   document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
+var isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
 
 /***/ }),
 
@@ -237,17 +239,17 @@ var checkAllContactFields = function checkAllContactFields() {
   checkField(contactEmail, 'email');
   checkText(contactMessage);
 
-  if (!contactPrivacyAgreement.checked) {
-    contactPrivacyAgreement.focus();
-    event.preventDefault();
-  }
-
   for (var i = 0; i < contactFields.length; i++) {
     if (contactFields[i].classList.contains('field--error')) {
-      contactFields[i].focus();
+      if (!_common_js__WEBPACK_IMPORTED_MODULE_0__.isMobileDevice) contactFields[i].focus();
       event.preventDefault();
       return;
     }
+  }
+
+  if (!contactPrivacyAgreement.checked) {
+    if (!_common_js__WEBPACK_IMPORTED_MODULE_0__.isMobileDevice) contactPrivacyAgreement.focus();
+    event.preventDefault();
   }
 };
 
@@ -303,13 +305,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var contactButtons = document.querySelectorAll('.contact-button');
 var modalContainer = document.querySelector('.body-container__modal-container');
-var modalWindow = modalContainer.children[0];
-var modalExitButton = modalContainer.children[1];
-var contactExitButton = document.querySelector('.modal-window__svg-button');
+var modalWindow = document.querySelector('.modal-container__modal-window');
+var modalBackExitButton = document.querySelector('.modal-container__back-close-button');
+var modalSvgExitButton = document.querySelector('.modal-window__svg-button');
 contactButtons.forEach(function (button) {
   button.addEventListener('click', function () {
     modalContainer.classList.remove('display--none');
     (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.setBodyOverflowY)(false);
+    modalSvgExitButton.focus();
   }, {
     passive: true
   });
@@ -324,7 +327,7 @@ var closeModalWindow = function closeModalWindow() {
   (0,_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.resetFieldErrors)(_contact_form_js__WEBPACK_IMPORTED_MODULE_1__.contactPrivacyAgreement);
 };
 
-[modalExitButton, contactExitButton].forEach(function (button) {
+[modalBackExitButton, modalSvgExitButton].forEach(function (button) {
   button.addEventListener('click', closeModalWindow, {
     passive: true
   });
@@ -341,4 +344,4 @@ window.addEventListener('resize', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.c7eeebaee3cf9c223627.js.map
+//# sourceMappingURL=src_js_modal-window_js.cd4c08e603b150e3f3c4.js.map

@@ -10,6 +10,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isContainerOpened": function() { return /* binding */ isContainerOpened; },
+/* harmony export */   "isMobileDevice": function() { return /* binding */ isMobileDevice; },
 /* harmony export */   "setBodyOverflowY": function() { return /* binding */ setBodyOverflowY; }
 /* harmony export */ });
  // Common functions
@@ -20,6 +21,7 @@ var isContainerOpened = function isContainerOpened(elem) {
 var setBodyOverflowY = function setBodyOverflowY(isPermitted) {
   document.body.style.overflowY = isPermitted ? 'auto' : 'hidden';
 };
+var isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
 
 /***/ }),
 
@@ -108,4 +110,4 @@ if (window.pageYOffset > 50) headerContainer.classList.add('header-container--le
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.ec0c716a633f62db2f67.js.map
+//# sourceMappingURL=src_js_header_js.9e3b27a592ddcd50190c.js.map
