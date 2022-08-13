@@ -253,10 +253,7 @@ var checkAllContactFields = function checkAllContactFields() {
   }
 };
 
-contactForm.addEventListener('submit', function () {
-  checkAllContactFields();
-  contactForm.setAttribute('action', 'https://formspree.io/f/mzbwpyjp');
-}, {
+contactForm.addEventListener('submit', checkAllContactFields, {
   passive: false
 }); // Manage keydown for name and email input fields
 
@@ -289,4 +286,4 @@ checkboxInputs.forEach(function (input) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_contact-form_js.c2f8f2a4b7b8ba0f094e.js.map
+//# sourceMappingURL=src_js_contact-form_js.0b49c92644fdaabb71e8.js.map

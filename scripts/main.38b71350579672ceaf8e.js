@@ -13,7 +13,7 @@
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
+/******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -101,7 +101,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"bdcf36393929bc6167b6","src_style_main_scss":"492fd7ef4b7282485b5b","src_js_header_js":"9e3b27a592ddcd50190c","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"cd4c08e603b150e3f3c4","src_js_contact-form_js":"c2f8f2a4b7b8ba0f094e"}[chunkId] + ".js";
+/******/ 			return "scripts/" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"cde99adad960db7993d8","src_style_main_scss":"7b8fa488cda2006f23cd","src_index_html":"ad8d26b9844a858a9b8d","src_js_header_js":"9e3b27a592ddcd50190c","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"9466d76d82118223a2be","src_js_contact-form_js":"0b49c92644fdaabb71e8"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -110,7 +110,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return undefined;
+/******/ 			return "style/" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"dad537b4e48396e0f200","src_style_main_scss":"fcfd89bc66eda83badb1"}[chunkId] + ".css";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -205,7 +205,79 @@
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = scriptUrl + "../";
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/css loading */
+/******/ 	!function() {
+/******/ 		var createStylesheet = function(chunkId, fullhref, resolve, reject) {
+/******/ 			var linkTag = document.createElement("link");
+/******/ 		
+/******/ 			linkTag.rel = "stylesheet";
+/******/ 			linkTag.type = "text/css";
+/******/ 			var onLinkComplete = function(event) {
+/******/ 				// avoid mem leaks.
+/******/ 				linkTag.onerror = linkTag.onload = null;
+/******/ 				if (event.type === 'load') {
+/******/ 					resolve();
+/******/ 				} else {
+/******/ 					var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 					var realHref = event && event.target && event.target.href || fullhref;
+/******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + realHref + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+/******/ 					err.type = errorType;
+/******/ 					err.request = realHref;
+/******/ 					linkTag.parentNode.removeChild(linkTag)
+/******/ 					reject(err);
+/******/ 				}
+/******/ 			}
+/******/ 			linkTag.onerror = linkTag.onload = onLinkComplete;
+/******/ 			linkTag.href = fullhref;
+/******/ 		
+/******/ 			document.head.appendChild(linkTag);
+/******/ 			return linkTag;
+/******/ 		};
+/******/ 		var findStylesheet = function(href, fullhref) {
+/******/ 			var existingLinkTags = document.getElementsByTagName("link");
+/******/ 			for(var i = 0; i < existingLinkTags.length; i++) {
+/******/ 				var tag = existingLinkTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+/******/ 				if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return tag;
+/******/ 			}
+/******/ 			var existingStyleTags = document.getElementsByTagName("style");
+/******/ 			for(var i = 0; i < existingStyleTags.length; i++) {
+/******/ 				var tag = existingStyleTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href");
+/******/ 				if(dataHref === href || dataHref === fullhref) return tag;
+/******/ 			}
+/******/ 		};
+/******/ 		var loadStylesheet = function(chunkId) {
+/******/ 			return new Promise(function(resolve, reject) {
+/******/ 				var href = __webpack_require__.miniCssF(chunkId);
+/******/ 				var fullhref = __webpack_require__.p + href;
+/******/ 				if(findStylesheet(href, fullhref)) return resolve();
+/******/ 				createStylesheet(chunkId, fullhref, resolve, reject);
+/******/ 			});
+/******/ 		}
+/******/ 		// object to store loaded CSS chunks
+/******/ 		var installedCssChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.miniCss = function(chunkId, promises) {
+/******/ 			var cssChunks = {"src_library_modules_css-normalize__css-normalize_css":1,"src_style_main_scss":1};
+/******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
+/******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
+/******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(function() {
+/******/ 					installedCssChunks[chunkId] = 0;
+/******/ 				}, function(e) {
+/******/ 					delete installedCssChunks[chunkId];
+/******/ 					throw e;
+/******/ 				}));
+/******/ 			}
+/******/ 		};
+/******/ 		
+/******/ 		// no hmr
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -300,11 +372,6 @@
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	!function() {
-/******/ 		__webpack_require__.nc = undefined;
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 /*!**********************!*\
@@ -312,10 +379,11 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.e(/*! import() */ "src_library_modules_css-normalize__css-normalize_css").then(__webpack_require__.bind(__webpack_require__, /*! ./library_modules/css-normalize/_css-normalize.css */ "./src/library_modules/css-normalize/_css-normalize.css"));
 __webpack_require__.e(/*! import() */ "src_style_main_scss").then(__webpack_require__.bind(__webpack_require__, /*! ./style/main.scss */ "./src/style/main.scss"));
+__webpack_require__.e(/*! import() */ "src_index_html").then(__webpack_require__.bind(__webpack_require__, /*! ./index.html */ "./src/index.html"));
 __webpack_require__.e(/*! import() */ "src_js_header_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/header.js */ "./src/js/header.js"));
 __webpack_require__.e(/*! import() */ "src_js_sections-navigation_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./js/sections-navigation.js */ "./src/js/sections-navigation.js", 23));
 __webpack_require__.e(/*! import() */ "src_js_modal-window_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/modal-window.js */ "./src/js/modal-window.js"));
 __webpack_require__.e(/*! import() */ "src_js_contact-form_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/contact-form.js */ "./src/js/contact-form.js"));
 /******/ })()
 ;
-//# sourceMappingURL=main.e7b4fe4bb57d992e109f.js.map
+//# sourceMappingURL=main.38b71350579672ceaf8e.js.map
