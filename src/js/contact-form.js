@@ -152,10 +152,7 @@ const checkAllContactFields = () => {
   }
 };
 
-contactForm.addEventListener('submit', function() {
-  checkAllContactFields();
-  contactForm.setAttribute('action', 'https://formspree.io/f/mzbwpyjp');
-}, {passive: false});
+contactForm.addEventListener('submit', checkAllContactFields, {passive: false});
 
 // Manage keydown for name and email input fields
 

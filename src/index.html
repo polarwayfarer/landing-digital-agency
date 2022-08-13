@@ -30,10 +30,10 @@
     <div class="body-container__elipse-2 elipse-2"></div>
 
     <div class="body-container__modal-container modal-container display--none">
-      <div class="modal-container__modal-window modal-window container-wrapper">
+      <section class="modal-container__modal-window modal-window container-wrapper">
         <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
-          <svg class="svg-button__svg-icon svg-icon " height="24" width="24" aria-hidden="true">
-            <use class="svg-icon__svg-use svg-use" href="#icon-exit"></use>
+          <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
+            <use href="#icon-exit"></use>
           </svg>
         </button>
 
@@ -51,7 +51,7 @@
           </ul>
         </div>
 
-        <form class="modal-window__contact-form contact-form" name="contactForm" action="" method="post" novalidate autocomplete="off">
+        <form class="modal-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
           <h3 class="contact-form__title title display--hidden">Contact form</h3>
           <div class="contact-form__required-container required-container">
             <span class="required-container__info-text info-text"><strong>All fields are required</strong></span>
@@ -93,7 +93,7 @@
           <input class="contact-form__submit-button submit-button button button--common" type="submit" name="submit" value="Send the letter" />
 
         </form>
-      </div>
+      </section>
 
       <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
     </div>
@@ -103,13 +103,14 @@
 
         <a class="header-container__logo-link logo-link link" href="#" rel="nofollow noopener noreferrer">Digital Agency</a>
 
-        <button class="header-container__svg-button svg-button  svg--stroke" aria-controls="headerNavList" aria-pressed="false" aria-expanded="false" aria-label="Open the navigation list">
+        <button class="header-container__svg-button svg-button svg--stroke" aria-controls="headerNavList" aria-pressed="false" aria-expanded="false" aria-label="Open the navigation list">
           <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
-            <use class="svg-icon__svg-use svg-use" href="#icon-menu"></use>
+            <use href="#icon-menu"></use>
           </svg>
         </button>
 
-        <nav id="headerNavList" class="header-container__nav-container nav-container" role="navigation">
+        <nav id="headerNavList" class="header-container__nav-container nav-container">
+          <h2 class="display--hidden">Website navigation</h2>
           <ul class="nav-container__ul-list ul-list">
             <li class="ul-list__li-item li-item">
               <a class="li-item__link link" href="#home">Home</a>
@@ -138,7 +139,7 @@
             <p class="content-container__p-item p-item">Digital Agency is your online team management tool that easy and prompt</p>
             <button class="content-container__contact-button contact-button button button--common" type="button">Contact us</button>
           </div>
-          <img class="section__img img" height="450" width="450" src="./images/main/business-people-discussing-business-idea.svg" aria-hidden="true" />
+          <img class="section__img img" height="450" width="450" src="./images/main/business-people-discussing-business-idea.svg" alt="An illustration of our team discussing great business ideas" />
         </section>
 
         <section class="main-container__companies-section companies-section section">
@@ -160,7 +161,7 @@
         </section>
 
         <section id="about" class="main-container__section section section--with-img section--common-top-gap about-section section--observed">
-          <img class="section__img img" height="450" width="450" src="./images/main/designer-team-working-on-creative-design.svg" aria-hidden="true" />
+          <img class="section__img img" height="450" width="450" src="./images/main/designer-team-working-on-creative-design.svg" alt="An illustration of our designer team in a moment of working on creative design" />
           <div class="section__content-container content-container">
             <h2 class="content-container__title title">Branding & design system</h2>
             <p class="content-container__p-item p-item">Commonly used in the graphic, print & publishing industries for previewing visual layout and mockups</p>
@@ -182,7 +183,7 @@
               </svg>
             </a>
           </div>
-          <img class="section__img img" height="450" width="450" src="./images/main/businessman-analyzing-data.svg" aria-hidden="true" />
+          <img class="section__img img" height="450" width="450" src="./images/main/businessman-analyzing-data.svg" alt="An illustration of our teammate analyzing data" />
         </section>
 
         <section id="testimonials" class="main-container__testimonials-section testimonials-section section section--common-top-gap section--observed">
@@ -193,35 +194,35 @@
 
           <div class="section__reviews-container reviews-container">
 
-            <div class="reviews-container__opinion-container opinion-container">
-              <img class="opinion-container__img img" height="132" width="132" src="./images/testimonials/western-man-4975942-4159828.svg" aria-hidden="true" />
-              <h3 class="opinion-container__title title">Andrew Rathore</h3>
-              <p class="opinion-container__p-item p-item">
+            <article class="reviews-container__opinion-article opinion-article">
+              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/western-man-4975942-4159828.svg" alt="Portrait of Andrew Rathore, our testimonial" />
+              <h3 class="opinion-article__title title">Andrew Rathore</h3>
+              <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
               </p>
-            </div>
+            </article>
 
-            <div class="reviews-container__opinion-container opinion-container">
-              <img class="opinion-container__img img" height="132" width="132" src="./images/testimonials/asian-woman-4975939-4159825.svg" aria-hidden="true" />
-              <h3 class="opinion-container__title title">Vera Duncan</h3>
-              <p class="opinion-container__p-item p-item">
+            <article class="reviews-container__opinion-article opinion-article">
+              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/asian-woman-4975939-4159825.svg" alt="Portrait of Vera Duncan, our testimonial" />
+              <h3 class="opinion-article__title title">Vera Duncan</h3>
+              <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
               </p>
-            </div>
+            </article>
 
-            <div class="reviews-container__opinion-container opinion-container">
-              <img class="opinion-container__img img" height="132" width="132" src="./images/testimonials/black-woman-4975941-4159827.svg" aria-hidden="true" />
-              <h3 class="opinion-container__title title">Mark Smith</h3>
-              <p class="opinion-container__p-item p-item">
+            <article class="reviews-container__opinion-article opinion-article">
+              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/black-woman-4975941-4159827.svg" alt="Portrait of Mark Smith, our testimonial" />
+              <h3 class="opinion-article__title title">Mark Smith</h3>
+              <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
               </p>
-            </div>
+            </article>
 
           </div>
         </section>
 
         <section id="contact" class="main-container__contact-section contact-section section section--with-img section--common-top-gap section--observed">
-          <img class="section__img img" height="450" width="450" src="./images/main/customer-support.svg" aria-hidden="true" />
+          <img class="section__img img" height="450" width="450" src="./images/main/customer-support.svg" alt="An illustration of our customer support in a working process" />
 
           <div class="section__content-container content-container">
             <h2 class="content-container__title title">Be a part of the next big thing</h2>
@@ -299,12 +300,13 @@
           </div>
         </div>
 
-      <div class="footer-container__copywrite-container copywrite-container">
-        <p class="copywrite-container__p-item p-item">
-          &copy; Matheus. Todos os direitos reservados
-        </p>
-      </div>
+        <div class="footer-container__copywrite-container copywrite-container">
+          <p class="copywrite-container__p-item p-item">
+            &copy; Matheus. Todos os direitos reservados
+          </p>
+        </div>
 
+      </div>
     </footer>
 
   </body>

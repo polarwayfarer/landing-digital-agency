@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 let mode = 'development';
 
@@ -9,22 +10,26 @@ module.exports = {
   entry: './src/index.js',
   mode: mode,
   output: {
-    filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[hash][ext][query]',
-    clean: true
+    filename: "scripts/[name].[contenthash].js",
+    assetModuleFilename: 'assets/[name].[contenthash][ext]',
+    clean: true,
+    asyncChunks: true
   },
   devtool: 'source-map',
   optimization: {
+    minimizer: [
+      new CssMinimizerPlugin()
+    ],
     splitChunks: {
       chunks: 'all'
     }
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style/[name].[contenthash].css'
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
     })
   ],
   module: {
@@ -32,7 +37,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
