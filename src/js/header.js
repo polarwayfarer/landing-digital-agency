@@ -6,7 +6,7 @@ import {isContainerOpened, setBodyOverflowY} from './common.js';
 
 let headerContainer = document.querySelector('.header-container');
 let headerNavContainer = document.querySelector('.header-container__nav-container');
-let headerNavList = headerNavContainer.children[0];
+let headerNavListLinks = document.querySelectorAll('.header-container__nav-container .link');
 let headerMenuButton = document.querySelector('.header-container__svg-button');
 
 const screenMax700 = window.matchMedia('(max-width: 700px)');
@@ -56,7 +56,7 @@ const toggleHeaderStyle = () => {
 window.addEventListener('resize', toggleHeaderStyle, {passive: true});
 toggleHeaderStyle();
 
-headerNavList.childNodes.forEach( elem => {
+headerNavListLinks.forEach( elem => {
   elem.addEventListener('click', closeMenu, {passive: true});
 });
 
@@ -70,7 +70,6 @@ headerMenuButton.addEventListener('click', function() {
 
   setMenuButtonAttribs(this, isHeaderMenuOpened());
   setBodyOverflowY(!isHeaderMenuOpened());
-
 }, {passive: true});
 
 // Control of header menu style on scroll
