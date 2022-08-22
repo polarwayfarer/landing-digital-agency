@@ -1,10 +1,10 @@
 "use strict";
-(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_header_js"],{
+(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_script_modules_header_js"],{
 
-/***/ "./src/js/common.js":
-/*!**************************!*\
-  !*** ./src/js/common.js ***!
-  \**************************/
+/***/ "./src/script/modules/common.js":
+/*!**************************************!*\
+  !*** ./src/script/modules/common.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -25,14 +25,14 @@ var isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
 
 /***/ }),
 
-/***/ "./src/js/header.js":
-/*!**************************!*\
-  !*** ./src/js/header.js ***!
-  \**************************/
+/***/ "./src/script/modules/header.js":
+/*!**************************************!*\
+  !*** ./src/script/modules/header.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/script/modules/common.js");
 
 'use strict'; // Control of header menu occurrence for mobile version
 
@@ -110,4 +110,4 @@ if (window.pageYOffset > 50) headerContainer.classList.add('header-container--le
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_header_js.265cc78edbfe0c7e625c.js.map
+//# sourceMappingURL=src_script_modules_header_js.f00d7002d479ac0ddc18.js.map

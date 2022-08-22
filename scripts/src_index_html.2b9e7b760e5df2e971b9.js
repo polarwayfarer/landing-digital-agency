@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./images/main/business-deal.svg */ "./src/images/main/business-deal.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/favicon.ico */ "./src/assets/favicon.ico"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./images/main/business-people-discussing-business-idea.svg */ "./src/images/main/business-people-discussing-business-idea.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./images/companies/spotify-logo.svg */ "./src/images/companies/spotify-logo.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./images/companies/slack-logo.svg */ "./src/images/companies/slack-logo.svg"), __webpack_require__.b);
@@ -20,9 +20,9 @@ var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./images/companies/zoom-logo.svg */ "./src/images/companies/zoom-logo.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./images/main/designer-team-working-on-creative-design.svg */ "./src/images/main/designer-team-working-on-creative-design.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./images/main/businessman-analyzing-data.svg */ "./src/images/main/businessman-analyzing-data.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/western-man-4975942-4159828.svg */ "./src/images/testimonials/western-man-4975942-4159828.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/asian-woman-4975939-4159825.svg */ "./src/images/testimonials/asian-woman-4975939-4159825.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/black-woman-4975941-4159827.svg */ "./src/images/testimonials/black-woman-4975941-4159827.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/andrew-rathore.svg */ "./src/images/testimonials/andrew-rathore.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/vera-duncan.svg */ "./src/images/testimonials/vera-duncan.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./images/testimonials/mark-smith.svg */ "./src/images/testimonials/mark-smith.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./images/main/customer-support.svg */ "./src/images/main/customer-support.svg"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
@@ -78,6 +78,16 @@ module.exports = function (url, options) {
 
 /***/ }),
 
+/***/ "./src/assets/favicon.ico":
+/*!********************************!*\
+  !*** ./src/assets/favicon.ico ***!
+  \********************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/favicon.a5677bb7109839a37599.ico";
+
+/***/ }),
+
 /***/ "./src/images/companies/dropbox-logo.svg":
 /*!***********************************************!*\
   !*** ./src/images/companies/dropbox-logo.svg ***!
@@ -115,16 +125,6 @@ module.exports = __webpack_require__.p + "assets/spotify-logo.0379d2c82b67592ebc
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/zoom-logo.dc4bba30c1c643d3bea1.svg";
-
-/***/ }),
-
-/***/ "./src/images/main/business-deal.svg":
-/*!*******************************************!*\
-  !*** ./src/images/main/business-deal.svg ***!
-  \*******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/business-deal.265e46195578daa8ea9e.svg";
 
 /***/ }),
 
@@ -168,35 +168,35 @@ module.exports = __webpack_require__.p + "assets/designer-team-working-on-creati
 
 /***/ }),
 
-/***/ "./src/images/testimonials/asian-woman-4975939-4159825.svg":
-/*!*****************************************************************!*\
-  !*** ./src/images/testimonials/asian-woman-4975939-4159825.svg ***!
-  \*****************************************************************/
+/***/ "./src/images/testimonials/andrew-rathore.svg":
+/*!****************************************************!*\
+  !*** ./src/images/testimonials/andrew-rathore.svg ***!
+  \****************************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/asian-woman-4975939-4159825.35144fc94e5762cab510.svg";
+module.exports = __webpack_require__.p + "assets/andrew-rathore.90df153ff83d117be8a6.svg";
 
 /***/ }),
 
-/***/ "./src/images/testimonials/black-woman-4975941-4159827.svg":
-/*!*****************************************************************!*\
-  !*** ./src/images/testimonials/black-woman-4975941-4159827.svg ***!
-  \*****************************************************************/
+/***/ "./src/images/testimonials/mark-smith.svg":
+/*!************************************************!*\
+  !*** ./src/images/testimonials/mark-smith.svg ***!
+  \************************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/black-woman-4975941-4159827.b868d9bc677f45c72b4d.svg";
+module.exports = __webpack_require__.p + "assets/mark-smith.b868d9bc677f45c72b4d.svg";
 
 /***/ }),
 
-/***/ "./src/images/testimonials/western-man-4975942-4159828.svg":
-/*!*****************************************************************!*\
-  !*** ./src/images/testimonials/western-man-4975942-4159828.svg ***!
-  \*****************************************************************/
+/***/ "./src/images/testimonials/vera-duncan.svg":
+/*!*************************************************!*\
+  !*** ./src/images/testimonials/vera-duncan.svg ***!
+  \*************************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/western-man-4975942-4159828.90df153ff83d117be8a6.svg";
+module.exports = __webpack_require__.p + "assets/vera-duncan.35144fc94e5762cab510.svg";
 
 /***/ })
 
 }]);
-//# sourceMappingURL=src_index_html.7153909cf06211614200.js.map
+//# sourceMappingURL=src_index_html.2b9e7b760e5df2e971b9.js.map

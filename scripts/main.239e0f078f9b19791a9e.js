@@ -101,7 +101,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "scripts/" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"cde99adad960db7993d8","src_style_main_scss":"7b8fa488cda2006f23cd","src_index_html":"7153909cf06211614200","src_js_header_js":"265cc78edbfe0c7e625c","src_js_sections-navigation_js":"b066777e4b65c23bb93c","src_js_modal-window_js":"9466d76d82118223a2be","src_js_contact-form_js":"0b49c92644fdaabb71e8"}[chunkId] + ".js";
+/******/ 			return "scripts/" + chunkId + "." + {"src_style_library_modules_css-normalize__css-normalize_css":"31563ef2ce34b69d089e","src_style_main_scss":"7b8fa488cda2006f23cd","src_index_html":"2b9e7b760e5df2e971b9","src_script_main_js":"433e3556ec50404cd999","src_script_modules_header_js":"f00d7002d479ac0ddc18","src_script_modules_sections-navigation_js":"b3d206a4fe6407bf13d8","src_script_modules_modal-window_js":"ffc63bdccf8f58deb160","src_script_modules_contact-form_js":"d8a14140525d93f1774f"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -110,7 +110,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "style/" + chunkId + "." + {"src_library_modules_css-normalize__css-normalize_css":"dad537b4e48396e0f200","src_style_main_scss":"fcfd89bc66eda83badb1"}[chunkId] + ".css";
+/******/ 			return "style/" + chunkId + "." + {"src_style_library_modules_css-normalize__css-normalize_css":"3a27cae12e2272316a3b","src_style_main_scss":"b70006399c231095395e"}[chunkId] + ".css";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -265,7 +265,7 @@
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = function(chunkId, promises) {
-/******/ 			var cssChunks = {"src_library_modules_css-normalize__css-normalize_css":1,"src_style_main_scss":1};
+/******/ 			var cssChunks = {"src_style_library_modules_css-normalize__css-normalize_css":1,"src_style_main_scss":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(function() {
@@ -377,13 +377,10 @@ var __webpack_exports__ = {};
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-__webpack_require__.e(/*! import() */ "src_library_modules_css-normalize__css-normalize_css").then(__webpack_require__.bind(__webpack_require__, /*! ./library_modules/css-normalize/_css-normalize.css */ "./src/library_modules/css-normalize/_css-normalize.css"));
+__webpack_require__.e(/*! import() */ "src_style_library_modules_css-normalize__css-normalize_css").then(__webpack_require__.bind(__webpack_require__, /*! ./style/library_modules/css-normalize/_css-normalize.css */ "./src/style/library_modules/css-normalize/_css-normalize.css"));
 __webpack_require__.e(/*! import() */ "src_style_main_scss").then(__webpack_require__.bind(__webpack_require__, /*! ./style/main.scss */ "./src/style/main.scss"));
 __webpack_require__.e(/*! import() */ "src_index_html").then(__webpack_require__.bind(__webpack_require__, /*! ./index.html */ "./src/index.html"));
-__webpack_require__.e(/*! import() */ "src_js_header_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/header.js */ "./src/js/header.js"));
-__webpack_require__.e(/*! import() */ "src_js_sections-navigation_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./js/sections-navigation.js */ "./src/js/sections-navigation.js", 23));
-__webpack_require__.e(/*! import() */ "src_js_modal-window_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/modal-window.js */ "./src/js/modal-window.js"));
-__webpack_require__.e(/*! import() */ "src_js_contact-form_js").then(__webpack_require__.bind(__webpack_require__, /*! ./js/contact-form.js */ "./src/js/contact-form.js"));
+__webpack_require__.e(/*! import() */ "src_script_main_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./script/main.js */ "./src/script/main.js", 23));
 /******/ })()
 ;
-//# sourceMappingURL=main.a255831bbec166bf9751.js.map
+//# sourceMappingURL=main.239e0f078f9b19791a9e.js.map

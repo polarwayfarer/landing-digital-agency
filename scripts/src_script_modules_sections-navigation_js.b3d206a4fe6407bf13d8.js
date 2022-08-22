@@ -1,10 +1,10 @@
 "use strict";
-(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_sections-navigation_js"],{
+(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_script_modules_sections-navigation_js"],{
 
-/***/ "./src/js/sections-navigation.js":
-/*!***************************************!*\
-  !*** ./src/js/sections-navigation.js ***!
-  \***************************************/
+/***/ "./src/script/modules/sections-navigation.js":
+/*!***************************************************!*\
+  !*** ./src/script/modules/sections-navigation.js ***!
+  \***************************************************/
 /***/ (function() {
 
 
@@ -51,4 +51,4 @@ observedSections.forEach(function (section) {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_sections-navigation_js.b066777e4b65c23bb93c.js.map
+//# sourceMappingURL=src_script_modules_sections-navigation_js.b3d206a4fe6407bf13d8.js.map

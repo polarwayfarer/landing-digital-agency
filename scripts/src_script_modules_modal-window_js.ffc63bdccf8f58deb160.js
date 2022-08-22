@@ -1,10 +1,10 @@
 "use strict";
-(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_js_modal-window_js"],{
+(self["webpackChunkfrom_figma_digital_agency"] = self["webpackChunkfrom_figma_digital_agency"] || []).push([["src_script_modules_modal-window_js"],{
 
-/***/ "./src/js/check-validity.js":
-/*!**********************************!*\
-  !*** ./src/js/check-validity.js ***!
-  \**********************************/
+/***/ "./src/script/modules/check-validity.js":
+/*!**********************************************!*\
+  !*** ./src/script/modules/check-validity.js ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -47,10 +47,10 @@ var manageKeydown = function manageKeydown(inputTypeStr) {
 
 /***/ }),
 
-/***/ "./src/js/common.js":
-/*!**************************!*\
-  !*** ./src/js/common.js ***!
-  \**************************/
+/***/ "./src/script/modules/common.js":
+/*!**************************************!*\
+  !*** ./src/script/modules/common.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -71,10 +71,10 @@ var isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
 
 /***/ }),
 
-/***/ "./src/js/contact-form.js":
-/*!********************************!*\
-  !*** ./src/js/contact-form.js ***!
-  \********************************/
+/***/ "./src/script/modules/contact-form.js":
+/*!********************************************!*\
+  !*** ./src/script/modules/contact-form.js ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -83,8 +83,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "contactPrivacyAgreement": function() { return /* binding */ contactPrivacyAgreement; },
 /* harmony export */   "resetFieldErrors": function() { return /* binding */ resetFieldErrors; }
 /* harmony export */ });
-/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
-/* harmony import */ var _check_validity_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check-validity.js */ "./src/js/check-validity.js");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/script/modules/common.js");
+/* harmony import */ var _check_validity_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check-validity.js */ "./src/script/modules/check-validity.js");
 
 
 'use strict'; // Control of Form inputs and submit
@@ -144,15 +144,16 @@ var assignErrorMessage = function assignErrorMessage(field, errorStatus) {
       errorText = "Email field isn't valid.<br />E.g.: my.company-123@mail.com";
       break;
 
-    case 'name--not-enough':
+    case 'not-enough--name':
+    case 'not-enough--email':
       errorText = "Field shouldn`t be less than 2 characters";
       break;
 
-    case 'text--not-enough':
+    case 'not-enough--text':
       errorText = 'Field shouldn\`t be less than 50 characters';
       break;
 
-    case 'text--too-much':
+    case 'too-much--text':
       errorText = 'Field shouldn\`t be more than 500 characters';
       break;
 
@@ -182,18 +183,14 @@ var checkEmptyInput = function checkEmptyInput(field) {
 };
 
 var checkField = function checkField(field, type) {
-  if (field.value.length === 1) {
-    assignErrorMessage(field, "name--not-enough");
-  } else if (field.value.length > 1 && !(0,_check_validity_js__WEBPACK_IMPORTED_MODULE_1__.isValid)(type, field.value)) {
-    assignErrorMessage(field, "not-valid--".concat(type));
-  }
-};
+  field.value = field.value.trim();
 
-var checkText = function checkText(field) {
-  if (field.value.length !== 0 && field.value.length < 50) {
-    assignErrorMessage(field, 'text--not-enough');
-  } else if (field.value.length > 1000) {
-    assignErrorMessage(field, 'text--too-much');
+  if (type !== 'text' && field.value.length === 1 || type === 'text' && field.value.length !== 0 && field.value.length < 50) {
+    assignErrorMessage(field, "not-enough--".concat(type));
+  } else if (type === 'text' && field.value.length > 1000) {
+    assignErrorMessage(field, 'too-much--text');
+  } else if (type !== 'text' && field.value.length !== 0 && !(0,_check_validity_js__WEBPACK_IMPORTED_MODULE_1__.isValid)(type, field.value)) {
+    assignErrorMessage(field, "not-valid--".concat(type));
   }
 };
 
@@ -225,7 +222,7 @@ contactEmail.addEventListener('blur', function () {
   passive: true
 });
 contactMessage.addEventListener('blur', function () {
-  checkText(contactMessage);
+  checkField(contactMessage, 'text');
 }, {
   passive: true
 }); // Check all fields before submitting and assign a mailto action to the form
@@ -237,7 +234,7 @@ var checkAllContactFields = function checkAllContactFields() {
   checkCheckbox(contactPrivacyAgreement);
   checkField(contactName, 'name');
   checkField(contactEmail, 'email');
-  checkText(contactMessage);
+  checkField(contactMessage, 'text');
 
   for (var i = 0; i < contactFields.length; i++) {
     if (contactFields[i].classList.contains('field--error')) {
@@ -285,15 +282,15 @@ checkboxInputs.forEach(function (input) {
 
 /***/ }),
 
-/***/ "./src/js/modal-window.js":
-/*!********************************!*\
-  !*** ./src/js/modal-window.js ***!
-  \********************************/
+/***/ "./src/script/modules/modal-window.js":
+/*!********************************************!*\
+  !*** ./src/script/modules/modal-window.js ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
-/* harmony import */ var _contact_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact-form.js */ "./src/js/contact-form.js");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/script/modules/common.js");
+/* harmony import */ var _contact_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact-form.js */ "./src/script/modules/contact-form.js");
 
 
 'use strict';
@@ -341,4 +338,4 @@ window.addEventListener('resize', function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_js_modal-window_js.9466d76d82118223a2be.js.map
+//# sourceMappingURL=src_script_modules_modal-window_js.ffc63bdccf8f58deb160.js.map
