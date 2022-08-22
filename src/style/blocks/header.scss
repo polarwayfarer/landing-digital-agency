@@ -1,13 +1,10 @@
-@use './../mixins' as *;
-@use './../colors' as *;
-
 $commonHeaderTop: 2.3em;
 
 .header-container {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: all .3s linear;
+  transition: all .2s linear;
   z-index: 50;
 
   .container-wrapper {
@@ -48,6 +45,7 @@ $commonHeaderTop: 2.3em;
   &--lesser {
     padding-top: .4em;
     padding-bottom: .4em;
+    box-shadow: 0 3px 4px -2px $greyImgBorder;
     background-color: rgba(207, 220, 237, 0.95); // $lightBlue
   }
 }

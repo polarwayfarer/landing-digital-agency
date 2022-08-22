@@ -1,23 +1,25 @@
+@use './modules/colors' as *;
+@use './modules/vars' as *;
+@use './modules/mixins' as *;
+
 @font-face {
   font-family: 'Inter';
-  src: url('./../library_modules/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  src: url('./library_modules/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
 }
 
-@import './modules/common-style.scss';
-@import './modules/reusable-classes.scss';
+@import './common/common-style.scss';
+@import './common/reusable-classes.scss';
+@import './common/elipses.scss';
 
-@import './modules/blocks/body.scss';
-@import './modules/blocks/header.scss';
-@import './modules/blocks/footer.scss';
+@import './blocks/body.scss';
+@import './blocks/header.scss';
+@import './blocks/footer.scss';
 
-@import './modules/blocks/modal-window.scss';
-@import './modules/blocks/contact-form.scss';
+@import './blocks/modal-window.scss';
+@import './blocks/contact-form.scss';
+@import './blocks/section.scss';
 
-@import './modules/blocks/section.scss';
-
-@import './modules/sections/contact-section.scss';
-@import './modules/sections/primary-section.scss';
-@import './modules/sections/companies-section.scss';
-@import './modules/sections/testimonials-section.scss';
-
-@import './modules/elipses.scss';
+@import './sections/contact-section.scss';
+@import './sections/primary-section.scss';
+@import './sections/companies-section.scss';
+@import './sections/testimonials-section.scss';

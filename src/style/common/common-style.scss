@@ -1,14 +1,7 @@
-@use 'mixins' as *;
-@use 'colors' as *;
-@use 'vars' as *;
-
-%selectionStyle {
+::selection {
   color: $mediumBlack;
   background-color: rgba(243, 222, 194, 0.7); // $lightYellow
 }
-
-::-moz-selection {@extend %selectionStyle;}
-::selection {@extend %selectionStyle;}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -19,6 +12,14 @@ h1, h2, h3, h4, h5, h6 {
 .img,
 .svg-img {
   pointer-events: none;
+
+  &::before {
+    display: block;
+    padding: 0.2em;
+    font-style: italic;
+    text-align: center;
+    background-color: $lightBlue;
+  }
 }
 
 @media screen and (pointer: fine) {
@@ -30,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 0 0.3em 0.3em $lightBlue !important;
     }
   }
-  
+
   .link {
     &:hover {color: $darkRed;}
 

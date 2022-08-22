@@ -1,6 +1,3 @@
-@use 'mixins' as *;
-@use 'colors' as *;
-
 .display {
   &--none {display: none !important;}
 

@@ -59,13 +59,14 @@ const assignErrorMessage = (field, errorStatus) => {
     case 'not-valid--email':
       errorText = `Email field isn\'t valid.<br />E.g.: my.company-123@mail.com`;
       break;
-    case 'name--not-enough':
+    case 'not-enough--name':
+    case 'not-enough--email':
       errorText = `Field shouldn\`t be less than 2 characters`;
       break;
-    case 'text--not-enough':
+    case 'not-enough--text':
       errorText = 'Field shouldn\`t be less than 50 characters';
       break;
-    case 'text--too-much':
+    case 'too-much--text':
       errorText = 'Field shouldn\`t be more than 500 characters';
       break;
     case 'unchecked':
@@ -99,18 +100,15 @@ const checkEmptyInput = field => {
 };
 
 const checkField = (field, type) => {
-  if (field.value.length === 1) {
-    assignErrorMessage(field, `name--not-enough`);
-  } else if (field.value.length > 1 && !isValid(type, field.value)) {
-    assignErrorMessage(field, `not-valid--${type}`);
-  }
-};
+  field.value = field.value.trim();
 
-const checkText = field => {
-  if (field.value.length !== 0 && field.value.length < 50) {
-    assignErrorMessage(field, 'text--not-enough');
-  } else if (field.value.length > 1000) {
-    assignErrorMessage(field, 'text--too-much');
+  if (type !== 'text' && field.value.length === 1
+  || type === 'text' && field.value.length !== 0 && field.value.length < 50) {
+    assignErrorMessage(field, `not-enough--${type}`);
+  } else if (type === 'text' && field.value.length > 1000) {
+    assignErrorMessage(field, 'too-much--text');
+  } else if (type !== 'text' && field.value.length !== 0 && !isValid(type, field.value)) {
+    assignErrorMessage(field, `not-valid--${type}`);
   }
 };
 
@@ -125,22 +123,30 @@ contactFields.forEach(field => {
 });
 contactPrivacyAgreement.addEventListener('change', function() {resetFieldErrors(this)}, {passive: true});
 
-contactName.addEventListener('blur', function() {checkField(contactName, 'name')}, {passive: true});
-contactEmail.addEventListener('blur', function() {checkField(contactEmail, 'email')}, {passive: true});
-contactMessage.addEventListener('blur', function() {checkText(contactMessage)}, {passive: true});
+contactName.addEventListener('blur', function() {
+  checkField(contactName, 'name');
+}, {passive: true});
+contactEmail.addEventListener('blur', function() {
+  checkField(contactEmail, 'email');
+}, {passive: true});
+contactMessage.addEventListener('blur', function() {
+  checkField(contactMessage, 'text');
+}, {passive: true});
 
 // Check all fields before submitting and assign a mailto action to the form
+
 const checkAllContactFields = () => {
   contactFields.forEach(field => checkEmptyInput(field));
 
   checkCheckbox(contactPrivacyAgreement);
   checkField(contactName, 'name');
   checkField(contactEmail, 'email');
-  checkText(contactMessage);
+  checkField(contactMessage, 'text');
 
   for (let i = 0; i < contactFields.length; i++) {
     if (contactFields[i].classList.contains('field--error')) {
       if (!isMobileDevice) contactFields[i].focus();
+
       event.preventDefault();
       return;
     }
