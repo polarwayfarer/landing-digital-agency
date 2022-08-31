@@ -2,7 +2,7 @@ import {isContainerOpened, setBodyOverflowY} from './common.js';
 
 'use strict';
 
-// Control of header menu occurrence for mobile version
+// Control of header's menu occurrence for mobile version
 
 let headerContainer = document.querySelector('.header-container');
 let headerNavContainer = document.querySelector('.header-container__nav-container');
@@ -72,7 +72,7 @@ headerMenuButton.addEventListener('click', function() {
   setBodyOverflowY(!isHeaderMenuOpened());
 }, {passive: true});
 
-// Control of header menu style on scroll
+// Control of header's menu style on scroll
 
 window.addEventListener('scroll', function() {
   let scrollHeightPos = window.pageYOffset;
