@@ -1,6 +1,4 @@
-import('./style/library_modules/css-normalize/_css-normalize.css');
-import('./style/main.scss');
+import('./scripts/main.js');
 
-import('./index.html');
-
-import('./script/main.js');
+import('./styles/library_modules/css-normalize/_css-normalize.css');
+import('./styles/main.scss');

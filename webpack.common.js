@@ -1,39 +1,40 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-
-let mode = 'development';
-
-if (process.env.NODE_ENV === 'production') mode = 'production';
 
 module.exports = {
-  entry: './src/index.js',
-  mode: mode,
-  output: {
-    filename: "scripts/[name].[contenthash].js",
-    assetModuleFilename: 'assets/[name].[contenthash][ext]',
-    clean: true,
-    asyncChunks: true
+  entry: {
+    main: './src/index.js',
   },
-  devtool: 'source-map',
   optimization: {
-    minimizer: [
-      new CssMinimizerPlugin()
-    ],
     splitChunks: {
-      chunks: 'all'
-    }
+      cacheGroups: {
+        styles: {
+          name: "main",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style/[name].[contenthash].css'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
+      filename: 'styles/[name].[contenthash].css'
     })
   ],
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: ['html-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -45,7 +46,7 @@ module.exports = {
               postcssOptions: {
                 plugins: [
                   [
-                    'postcss-preset-env', {}
+                    'postcss-preset-env'
                   ]
                 ]
               }
@@ -53,18 +54,6 @@ module.exports = {
           },
           'sass-loader'
         ]
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.html$/i,
-        use: 'html-loader'
       },
       {
         test: /\.m?js$/,
