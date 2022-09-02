@@ -1,0 +1,1 @@
+{"version":3,"file":"scripts/790.acfac01c1f61f2df6d1a.js","mappings":"6HAAA,6BACA,kCACA,6BACA,4B","sources":["webpack://from-figma-digital-agency/./src/scripts/main.js"],"sourcesContent":["import('./modules/header.js');\nimport('./modules/sections-navigation.js');\nimport('./modules/modal-window.js');\nimport('./modules/contact-form.js');\n"],"names":[],"sourceRoot":""}

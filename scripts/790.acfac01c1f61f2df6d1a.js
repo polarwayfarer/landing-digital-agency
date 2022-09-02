@@ -1,0 +1,2 @@
+(self.webpackChunkfrom_figma_digital_agency=self.webpackChunkfrom_figma_digital_agency||[]).push([[790],{790:function(e,n,i){i.e(425).then(i.bind(i,425)),i.e(474).then(i.t.bind(i,474,23)),i.e(614).then(i.bind(i,614)),i.e(575).then(i.bind(i,575))}}]);
+//# sourceMappingURL=790.acfac01c1f61f2df6d1a.js.map
