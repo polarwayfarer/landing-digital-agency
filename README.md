@@ -21,7 +21,11 @@ It's a landing page build from Figma based on website design ['Digital Agency - 
 ## Creators
 Coded and improved by [Yanka_InCode](https://github.com/yankaincode).
 
-The landing page layout is created by [Matheus Vieira](https://www.figma.com/@matheusdias20) for Figma design.
+The landing page layout is created by [Matheus Vieira](https://www.figma.com/@matheusdias20) and shared with [Figma Community](https://www.figma.com/community).
+
+### Gratitude
+A big thank you very much for a great explanation of Webpack goes to [Colt Steele](https://github.com/Colt) with his [full tutorial course from
+freeCodeCamp.org on YT](https://www.youtube.com/watch?v=MpGLUVbqoYQ&t=5078s). It made easier further research of the [Webpack](https://webpack.js.org/) documentation.
 
 ## License
 The source code of the project is distributed under [MIT License](./LICENSE).
