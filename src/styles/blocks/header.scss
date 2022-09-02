@@ -19,7 +19,9 @@ $commonHeaderTop: 2.3em;
     text-transform: uppercase;
     @include lineFontParams(120%, 1em, 700);
   }
-  &__nav-container {text-transform: lowercase;}
+  &__nav-container {
+    text-transform: lowercase;
+  }
 
   &--menu-opened {
     z-index: 10;

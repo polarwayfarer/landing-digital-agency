@@ -7,6 +7,8 @@ body {overflow: hidden auto;}
   color: $mediumBlack;
   background-color: $whiteBack;
 
+  animation: header-appear 2.5s linear 1;
+
   &__header-container {
     .container-wrapper {@include wrapperStyle(54.3em);}
   }
@@ -48,4 +50,10 @@ body {overflow: hidden auto;}
       .container-wrapper {font-size: 14px;}
     }
   }
+}
+
+// Animations
+@keyframes header-appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
