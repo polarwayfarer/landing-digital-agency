@@ -1,0 +1,9 @@
+/*  Recomendation from Eric Bailey for case, if user has requested a reduced motion experience, or the device has a screen with a slow refresh rate. */
+/*  Link to the original article: https://css-tricks.com/revisiting-prefers-reduced-motion/ */
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

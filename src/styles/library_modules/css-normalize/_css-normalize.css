@@ -1,0 +1,5 @@
+/* Normalize CSS in different browsers */
+@import "./normalize-by-necolas.css";
+@import "./normalize-by-freelancerlifestyle.css";
+@import "./prefers-reduced-motion.css";
+@import "./form.css";

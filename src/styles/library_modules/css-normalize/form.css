@@ -1,0 +1,7 @@
+/* Custom normalizing for forms */
+
+input[type='checkbox'],
+input[type='submit'],
+label {
+  cursor: pointer;
+}
