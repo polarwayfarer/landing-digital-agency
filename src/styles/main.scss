@@ -1,11 +1,7 @@
 @use './modules/colors' as *;
 @use './modules/vars' as *;
 @use './modules/mixins' as *;
-
-@font-face {
-  font-family: 'Inter';
-  src: url('./library_modules/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
-}
+@use './modules/fonts' as *;
 
 @import './common/common-style.scss';
 @import './common/reusable-classes.scss';
