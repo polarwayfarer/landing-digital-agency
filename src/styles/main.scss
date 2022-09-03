@@ -2,6 +2,7 @@
 @use './modules/vars' as *;
 @use './modules/mixins' as *;
 @use './modules/fonts' as *;
+@use './modules/animations' as *;
 
 @import './common/common-style.scss';
 @import './common/reusable-classes.scss';

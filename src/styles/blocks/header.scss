@@ -12,6 +12,8 @@ $commonHeaderTop: 2.3em;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    animation: $animaFirstAppear;
   }
 
   &__logo-link {

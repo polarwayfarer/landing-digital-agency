@@ -1,0 +1,6 @@
+$animaFirstAppear: first-appear 1.5s linear 1;
+
+@keyframes first-appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
