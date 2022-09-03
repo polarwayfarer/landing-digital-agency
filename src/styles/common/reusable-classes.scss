@@ -23,6 +23,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: $mediumBlue;
+  animation: $animaFirstAppear;
   @include lineFontParams(172%, 0.8em, 600);
 
   &:focus {background-color: $mediumGreen;}
