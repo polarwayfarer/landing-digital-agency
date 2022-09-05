@@ -9,6 +9,7 @@ function pageOnLoad() {
   }, 3500);
 
   setTimeout(() => {
+    body.style.overflowY = 'auto';
     pageOnLoadContainer.remove();
     window.removeEventListener('load', pageOnLoad, {passive: true});
     body.style.overflowY = 'auto';

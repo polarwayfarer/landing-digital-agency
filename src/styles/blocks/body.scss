@@ -1,10 +1,11 @@
+body {overflow: hidden;}
+
 .body-container {
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   color: $mediumBlack;
   background-color: $whiteBack;
-  overflow: hidden auto;
 
   &__header-container {
     .container-wrapper {@include wrapperStyle(54.3em);}
