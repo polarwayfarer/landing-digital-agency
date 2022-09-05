@@ -11,5 +11,6 @@ function pageOnLoad() {
   setTimeout(() => {
     pageOnLoadContainer.remove();
     window.removeEventListener('load', pageOnLoad, {passive: true});
+    body.style.overflowY = 'auto';
   }, 4500);
 }

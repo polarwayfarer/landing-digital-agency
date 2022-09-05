@@ -10,8 +10,8 @@
 
   &__title {
     position: absolute;
-    width: 100%;
-    font-size: 1em;
+    font-size: 1.2em;
+    white-space: nowrap;
     text-transform: uppercase;
     animation: before-page-load 5s ease-in-out infinite
   }
