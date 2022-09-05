@@ -11,6 +11,11 @@
 
   <body class="body-container">
 
+    <div class="body-container__page-on-load-container page-on-load-container">
+      <h1 class="page-on-load-container__title title">Digital Agency</h1>
+      <p class="display--hidden">Content is loading. Please, wait a bit.</p>
+    </div>
+
     <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
       <symbol id="icon-menu">
         <rect x="2" y="4" width="20" height="1.05" />
@@ -30,16 +35,16 @@
     <div class="body-container__elipse-2 elipse-2" aria-hidden="true"></div>
 
     <div class="body-container__modal-container modal-container display--none">
-      <section class="modal-container__modal-window modal-window container-wrapper">
+      <section class="modal-container__modal-window modal-window contact-window container-wrapper">
         <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
           <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
             <use href="#icon-exit"></use>
           </svg>
         </button>
 
-        <h2 class="modal-window__title title">Contact us</h2>
+        <h2 class="contact-window__title title">Contact us</h2>
 
-        <div class="modal-window__links-container links-container">
+        <div class="contact-window__links-container links-container">
           <h3 class="links-container__title title">Source links</h3>
           <ul class="links-container__ul-list ul-list ul-list--row">
             <li class="ul-list__li-item li-item">
@@ -51,7 +56,7 @@
           </ul>
         </div>
 
-        <form class="modal-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
+        <form class="contact-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
           <h3 class="contact-form__title title display--hidden">Contact form</h3>
           <div class="contact-form__required-container required-container">
             <span class="required-container__info-text info-text"><strong>All fields are required</strong></span>
