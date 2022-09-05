@@ -1,0 +1,2 @@
+(self.webpackChunkfrom_figma_digital_agency=self.webpackChunkfrom_figma_digital_agency||[]).push([[283],{283:function(){var e=document.body,o=document.querySelector(".page-on-load-container");window.addEventListener("load",(function n(){setTimeout((function(){o.classList.add("page-on-load-container--fade-out")}),3500),setTimeout((function(){o.remove(),window.removeEventListener("load",n,{passive:!0}),e.style.overflowY="auto"}),4500)}),{passive:!0})}}]);
+//# sourceMappingURL=283.5f19fb028a44fc6f96a8.js.map
