@@ -2,8 +2,7 @@
   position: absolute;
   top: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
   height: 100%;
   width: 100%;
   background: linear-gradient(155deg, $lightBlue, white, $lightYellow);
@@ -11,12 +10,13 @@
 
   &__title {
     position: absolute;
-    font-size: 1.2em;
+    width: 100%;
+    font-size: 1em;
     text-transform: uppercase;
-    animation: before-page-load 3.5s ease-in-out infinite
+    animation: before-page-load 5s ease-in-out infinite
   }
 
   &--fade-out {
-    animation: fade-out 1.5s ease-out 1;
+    animation: fade-out 1s linear 1;
   }
 }
