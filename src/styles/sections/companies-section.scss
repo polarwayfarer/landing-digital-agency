@@ -5,7 +5,7 @@
   &__title {
     text-align: center;
     color: $greyTestimonialsTitle;
-    @include lineFontParams(100%, 0.8em, 300);
+    @extend %font--common-lfw-100;
   }
 
   &__ul-list {

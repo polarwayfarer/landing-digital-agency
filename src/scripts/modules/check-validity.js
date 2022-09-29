@@ -1,4 +1,4 @@
-'use strict';
+/* Functions for form: checker and keyboard manager */
 
 export const isValid = (inputTypeStr, inputValue) => {
   let regExpPrecept;

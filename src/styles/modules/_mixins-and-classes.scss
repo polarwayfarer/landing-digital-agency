@@ -1,0 +1,24 @@
+@mixin wrapperStyle($width) {
+  max-width: $width;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin lineFontWeightParams($lineHeight, $fSize, $fWeight) {
+  line-height: $lineHeight;
+  font-size: $fSize;
+  font-weight: $fWeight;
+}
+
+%font--common-lfw-100 {
+  @include lineFontWeightParams(100%, 0.8em, 300);
+}
+
+%font--common-lfw-153 {
+  @include lineFontWeightParams(153%, 0.9em, 400);
+}
+
+%font--common-lfw-172 {
+  @include lineFontWeightParams(172%, 0.8em, 400);
+}

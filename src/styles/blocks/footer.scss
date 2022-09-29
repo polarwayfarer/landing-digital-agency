@@ -30,11 +30,11 @@
   &__p-item {
     max-width: 12em;
     margin-top: 2.45em;
-    @include lineFontParams(150%, 0.8em, 300);
+    @include lineFontWeightParams(150%, 0.8em, 300);
   }
 }
 
-.copywrite-container__p-item {@include lineFontParams(100%, 0.8em, 300);}
+.copywrite-container__p-item {@extend %font--common-lfw-100;}
 
 @media screen and (max-width: 1150px) {
   .about-container {grid-area: 1/1/2/4;}

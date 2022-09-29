@@ -4,7 +4,7 @@
 
   &__required-container {margin-left: auto;}
 
-  &__partition {
+  &__partition-container {
     margin-top: 1em;
     &:last-of-type {margin-top: 1.5em;}
   }
@@ -13,63 +13,92 @@
     width: 12em;
     margin: 2em 0 0 auto;
   }
-}
 
-.partition {
-  .input,
-  .textarea,
-  &__checkbox-container {
-    margin-top: 0.4em;
+  .p-item--info {
+    border-radius: 0.5em;
+    text-align: justify;
+    color: $mediumBlack;
+
+    .link {color: $darkYellow;}
   }
 
-  .input,
-  .textarea {
-    width: 100%;
-    border: 2px solid $mediumBlue;
-    @include lineFontParams(150%, 0.8em, 400);
+  .partition-container {
+    .input,
+    .textarea,
+    &__checkbox-container {
+      margin-top: 0.4em;
+    }
+
+    .input,
+    .textarea {
+      width: 100%;
+      border: 2px solid $mediumBlue;
+      @include lineFontWeightParams(150%, 0.8em, 400);
+    }
+
+    .textarea {min-height: 30px;}
+
+    &__label,
+    .label-container__label {
+      max-width: 60%;
+      padding: 0.2em;
+      @include lineFontWeightParams(140%, 0.9em, 500);
+    }
+
+    &__p-item.p-item--privacy {
+      border-bottom-right-radius: 0;
+      @include lineFontWeightParams(140%, 0.7em, 400);
+    }
+
+    &__p-item.p-item--error {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 0.2em 0.5em;
+      text-align: center;
+    }
   }
 
-  .textarea {min-height: 30px;}
+  .required-container__p-item {@include lineFontWeightParams(100%, 0.8em, 400);}
 
-  &__privacy-info {
-    border-bottom-right-radius: 0;
-    @include lineFontParams(140%, 0.7em, 400);
+  .label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__p-item {
+      margin-right: 0.2em;
+      margin-left: 0.2em;
+      @include lineFontWeightParams(100%, 0.7em, 500);
+    }
   }
 
-  &__error-info {
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0.2em 0.5em;
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    border-radius: 0.4em;
     text-align: center;
-  }
-}
+    transition: $focusTransition;
 
-.info-text {
-  border-radius: 0.5em;
-  text-align: justify;
-  color: $mediumBlack;
+    &__label {
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+      @include lineFontWeightParams(140%, 0.8em, 600);
+    }
 
-  &__link {color: $darkYellow;}
-}
-
-.required-container__info-text {@include lineFontParams(100%, 0.8em, 400);}
-
-.label-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__label {
-    max-width: 60%;
-    padding: 0.2em;
-    @include lineFontParams(140%, 0.9em, 500);
+    &--focused {box-shadow: $focusShadow;}
   }
 
-  &__info-text {
-    margin-right: 0.2em;
-    margin-left: 0.2em;
-    @include lineFontParams(100%, 0.7em, 500);
+  .input--error {border-color: $mediumRed;}
+
+  .p-item--error {
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    color: white;
+    background-color: $darkRed;
+    @include lineFontWeightParams(150%, 0.7em, 400);
+
+    &-checkbox {border-radius: 1em;}
   }
 }
 
@@ -79,37 +108,9 @@
     justify-content: flex-start;
     align-items: flex-start;
 
-    &__info-text {
+    &__p-item {
       align-self: flex-end;
       margin-bottom: 0.3em;
     }
   }
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  border-radius: 0.4em;
-  text-align: center;
-  transition: $focusTransition;
-
-  .checkbox-label {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    @include lineFontParams(140%, 0.8em, 600);
-  }
-
-  &--focused {box-shadow: $focusShadow;}
-}
-
-.field--error {border-color: $mediumRed;}
-
-.error-info {
-  border-bottom-right-radius: 2em;
-  border-bottom-left-radius: 2em;
-  color: white;
-  background-color: $darkRed;
-  @include lineFontParams(150%, 0.7em, 400);
-
-  &--checkbox {border-radius: 1em;}
 }

@@ -1,13 +1,11 @@
-import {isContainerOpened, setBodyOverflowY} from './common.js';
+import {isContainerOpened, setBodyOverflowY, setElemShown} from './common.js';
 
-'use strict';
+/* Control of header's menu occurrence for mobile version */
 
-// Control of header's menu occurrence for mobile version
-
-let headerContainer = document.querySelector('.header-container');
-let headerNavContainer = document.querySelector('.header-container__nav-container');
-let headerNavListLinks = document.querySelectorAll('.header-container__nav-container .link');
-let headerMenuButton = document.querySelector('.header-container__svg-button');
+const headerContainer = document.querySelector('.header-container');
+const headerNavContainer = document.querySelector('.header-container__nav-container');
+const headerNavListLinks = document.querySelectorAll('.header-container__nav-container .link');
+const headerMenuButton = document.querySelector('.header-container__svg-button');
 
 const screenMax700 = window.matchMedia('(max-width: 700px)');
 
@@ -32,7 +30,7 @@ const closeMenu = () => {
   if (!screenMax700.matches) return;
 
   headerContainer.classList.remove('header-container--menu-opened');
-  headerNavContainer.classList.add('display--none');
+  setElemShown(headerNavContainer, false);
 
   if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
 
@@ -45,11 +43,11 @@ const toggleHeaderStyle = () => {
     closeMenu();
 
   if (screenMax700.matches) {
-    headerMenuButton.classList.remove('display--none');
-    headerNavContainer.classList.add('display--none');
+    setElemShown(headerMenuButton, true);
+    setElemShown(headerNavContainer, false);
   } else {
-    headerMenuButton.classList.add('display--none');
-    headerNavContainer.classList.remove('display--none');
+    setElemShown(headerMenuButton, false);
+    setElemShown(headerNavContainer, true);
   }
 };
 
@@ -62,7 +60,12 @@ headerNavListLinks.forEach( elem => {
 
 headerMenuButton.addEventListener('click', function() {
   headerContainer.classList.toggle('header-container--menu-opened');
-  headerNavContainer.classList.toggle('display--none');
+
+  if (headerContainer.classList.contains('header-container--menu-opened')) {
+    setElemShown(headerNavContainer, true);
+  } else {
+    setElemShown(headerNavContainer, false);
+  }
 
   headerContainer.classList.toggle('header-container--lesser',
     !isHeaderMenuOpened() && window.pageYOffset > 50

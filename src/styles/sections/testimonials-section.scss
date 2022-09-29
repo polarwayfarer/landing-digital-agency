@@ -7,7 +7,7 @@
     .subtitle {
       margin-bottom: 0.8em;
       text-transform: uppercase;
-      @include lineFontParams(172%, 0.8em, 400);
+      @include lineFontWeightParams(172%, 0.8em, 400);
     }
   }
 
@@ -77,11 +77,11 @@
     text-align: center;
   }
 
-  &__title {@include lineFontParams(153%, 0.9em, 400);}
+  &__title {@extend %font--common-lfw-153;}
 
   &__p-item {
     margin: auto;
-    @include lineFontParams(130%, 0.7em, 300);
+    @include lineFontWeightParams(130%, 0.7em, 300);
   }
 }
 

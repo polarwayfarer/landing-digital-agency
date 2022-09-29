@@ -19,7 +19,7 @@ $commonHeaderTop: 2.3em;
   &__logo-link {
     margin-left: 0.5em;
     text-transform: uppercase;
-    @include lineFontParams(120%, 1em, 700);
+    @include lineFontWeightParams(120%, 1em, 700);
   }
   &__nav-container {
     text-transform: lowercase;
@@ -61,7 +61,7 @@ $commonHeaderTop: 2.3em;
     flex-wrap: wrap;
     gap: 2.55em 3em;
 
-    .li-item {@include lineFontParams(153%, 0.9em, 400);}
+    .li-item {@include lineFontWeightParams(153%, 0.9em, 400);}
   }
 }
 

@@ -1,4 +1,6 @@
-'use strict';
+/* Sections' control of smooth navigation and  IntersectionObserver */
+
+// Common functions
 
 const getId = linkElem => linkElem.getAttribute('href').replace('#', '');
 
@@ -14,12 +16,12 @@ const addSmoothNavigation = linksArr => {
         top: document.getElementById(currentLinkId).offsetTop - 50,
         behavior: 'smooth'
       });
-    });
+    }, {passive: false});
   });
 }
 
-let headerNavLinks = document.querySelectorAll('.header-container__nav-container a');
-let svgLinks = document.querySelectorAll('.svg-link');
+const headerNavLinks = document.querySelectorAll('.header-container__nav-container a');
+const svgLinks = document.querySelectorAll('.svg-link');
 
 addSmoothNavigation(headerNavLinks);
 addSmoothNavigation(svgLinks);
@@ -36,6 +38,6 @@ const observer = new IntersectionObserver(entries => {
   });
 }, {threshold: 0.5});
 
-let observedSections = document.querySelectorAll('.section--observed');
+const observedSections = document.querySelectorAll('.section--observed');
 
 observedSections.forEach(section => observer.observe(section));

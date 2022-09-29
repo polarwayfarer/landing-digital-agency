@@ -34,75 +34,6 @@
     <div class="body-container__elipse-1 elipse-1" aria-hidden="true"></div>
     <div class="body-container__elipse-2 elipse-2" aria-hidden="true"></div>
 
-    <div class="body-container__modal-container modal-container display--none">
-      <section class="modal-container__modal-window modal-window contact-window container-wrapper">
-        <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
-          <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
-            <use href="#icon-exit"></use>
-          </svg>
-        </button>
-
-        <h2 class="contact-window__title title">Contact us</h2>
-
-        <div class="contact-window__links-container links-container">
-          <h3 class="links-container__title title">Source links</h3>
-          <ul class="links-container__ul-list ul-list ul-list--row">
-            <li class="ul-list__li-item li-item">
-              <a class="li-item__link link link--white-back" href="https://github.com/yankaincode/from-figma-digital-agency" aria-label="Go to the source code of the website on GitHub" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li class="ul-list__li-item li-item">
-              <a class="li-item__link link link--white-back" href="https://www.figma.com/community/file/1117815114206690225" aria-label="Go to the original design of the website on Figma" target="_blank" rel="noopener">Figma</a>
-            </li>
-          </ul>
-        </div>
-
-        <form class="contact-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
-          <h3 class="contact-form__title title display--hidden">Contact form</h3>
-          <div class="contact-form__required-container required-container">
-            <span class="required-container__info-text info-text"><strong>All fields are required</strong></span>
-          </div>
-
-          <div class="contact-form__partition partition">
-            <label class="partition__label label" for="contactName" id="contactNameLabel" tabindex='-1'>Name</label>
-            <br />
-            <input id="contactName" name="name" class="partition__name-input name-input input" type="text" maxlength="70" placeholder="..." aria-labelledby="contactNameLabel" required />
-          </div>
-
-          <div class="contact-form__partition partition">
-            <label class="partition__label label" for="contactEmail" id="contactEmailLabel" tabindex='-1'>Email</label>
-            <br />
-            <input class="partition__email-input email-input input" id="contactEmail" name="email" type="email" maxlength="70" placeholder="..." aria-labelledby="contactEmailLabel" required />
-          </div>
-
-          <div class="contact-form__partition partition">
-            <div class="partition__label-container label-container">
-              <label class="label-container__label label" for="contactMessage" id="contactMessageLabel" tabindex='-1'>Message (not less than 50)</label>
-              <p id="contactMessageInfo" tabindex="-1" class="label-container__info-text info-text">Characters: 0 of 1000</p>
-            </div>
-            <textarea class="partition__textarea textarea" id="contactMessage" name="message" minlength="50" maxlength="1000" rows="3" placeholder="..." aria-labelledby="contactMessageLabel" aria-describedby="contactMessageInfo" required></textarea>
-          </div>
-
-          <div class="contact-form__partition partition">
-            <p id="privacyAgreementInfo" tabindex="-1" class="partition__privacy-info privacy-info info-text">
-              The form uses <a class="info-text__link link" href="https://formspree.io/" aria-label="An official website of the email service Formspree" target="_blank" rel="noopener">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send the inputted data to <a class="info-text__link link" href="https://github.com/yankaincode" aria-label="Yanka_InCode on GitHub" target="_blank" rel="noopener">Yanka_InCode</a> (the developer of this website).
-              <br />Sending data via this form is safe on both sides through HTTPS secure communication. Also, this website doesn’t use cookies: doesn't gather, save or send any information about your device and activity.
-              <br />But, nevertheless, it's a front-end project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and email addresses).
-            </p>
-
-            <div class="partition__checkbox-container checkbox-container">
-              <input id="privacyAgreement" name="privacyAgreement" type="checkbox" aria-labelledby="privacyAgreementLabel" aria-describedby="privacyAgreementInfo" class="checkbox-container__checkbox-input checkbox-input" required />
-              <label id="privacyAgreementLabel" tabindex="-1" for="privacyAgreement" class="checkbox-container__checkbox-label checkbox-label">I agree to the Terms of the Service agreement and Privacy Policy, written above.</label>
-            </div>
-          </div>
-
-          <input class="contact-form__submit-button submit-button button button--common" type="submit" name="submit" value="Send the letter" />
-
-        </form>
-      </section>
-
-      <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
-    </div>
-
     <header class="body-container__header-container header-container header-container--normal">
       <div class="container-wrapper">
 
@@ -142,7 +73,7 @@
           <div class="section__content-container content-container">
             <h1 class="content-container__title title">Building digital products, brands & experience</h1>
             <p class="content-container__p-item p-item">Digital Agency is your online team management tool that easy and prompt</p>
-            <button class="content-container__contact-button contact-button button button--common" type="button">Contact us</button>
+            <button class="content-container__contact-button contact-button button button--contact" aria-controls="modalContactWindow" aria-pressed="false" aria-expanded="false">Contact us</button>
           </div>
           <img class="section__img img" height="450" width="450" src="./images/main/business-people-discussing-business-idea.svg" alt="An illustration of our team discussing great business ideas" />
         </section>
@@ -232,7 +163,7 @@
           <div class="section__content-container content-container">
             <h2 class="content-container__title title">Be a part of the next big thing</h2>
             <p class="content-container__p-item p-item">We work with Brans, Startups, to SMEs. Collaborate for more impact and growth</p>
-            <button class="content-container__contact-button contact-button button button--common" type="button">Contact us</button>
+            <button class="content-container__contact-button contact-button button button--contact" aria-controls="modalContactWindow" aria-pressed="false" aria-expanded="false">Contact us</button>
           </div>
         </section>
 
@@ -313,6 +244,75 @@
 
       </div>
     </footer>
+
+    <aside class="body-container__modal-container modal-container display--none" aria-hidden="true">
+      <section id="modalContactWindow" class="modal-container__modal-window modal-window contact-window container-wrapper">
+        <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
+          <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
+            <use href="#icon-exit"></use>
+          </svg>
+        </button>
+
+        <h2 class="contact-window__title title">Contact us</h2>
+
+        <div class="contact-window__links-container links-container">
+          <h3 class="links-container__title title">Source links</h3>
+          <ul class="links-container__ul-list ul-list ul-list--row">
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://github.com/yankaincode/from-figma-digital-agency" aria-label="Go to the source code of the website on GitHub" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://www.figma.com/community/file/1117815114206690225" aria-label="Go to the original design of the website on Figma" target="_blank" rel="noopener">Figma</a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
+          <h3 class="contact-form__title title display--hidden">Contact form</h3>
+          <p class="contact-form__required-container required-container">
+            <span class="required-container__p-item p-item p--item--info"><strong>All fields are required</strong></span>
+          </p>
+
+          <div class="contact-form__partition-container partition-container">
+            <label class="partition-container__label label" for="contactName">Name</label>
+            <br />
+            <input id="contactName" name="name" class="partition-container__name-input name-input input" type="text" maxlength="70" placeholder="..." required />
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <label class="partition-container__label label" for="contactEmail">Email</label>
+            <br />
+            <input class="partition-container__email-input email-input input" id="contactEmail" name="email" type="email" maxlength="70" placeholder="..." required />
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <div class="partition-container__label-container label-container">
+              <label class="label-container__label label" for="contactMessage" id="contactMessageLabel" tabindex='-1'>Message (not less than 50)</label>
+              <p id="contactMessageLengthInfoP" class="label-container__p-item p-item p--item--info">Characters: 0 of 1000</p>
+            </div>
+            <textarea class="partition-container__textarea textarea" id="contactMessage" name="message" minlength="50" maxlength="1000" rows="3" placeholder="..." aria-labelledby="contactMessageLabel" aria-describedby="contactMessageInfo" required></textarea>
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <p id="privacyAgreementInfo" class="partition-container__p-item p-item--privacy p-item--info">
+              The form uses <a class="p-item__link link" href="https://formspree.io/" aria-label="An official website of the email service Formspree" target="_blank" rel="noopener">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send the inputted data to <a class="p-item__link link" href="https://github.com/yankaincode" aria-label="Yanka_InCode on GitHub" target="_blank" rel="noopener">Yanka_InCode</a> (the developer of this website).
+              <br />Sending data via this form is safe on both sides through HTTPS secure communication. Also, this website doesn’t use cookies: doesn't gather, save or send any information about your device and activity.
+              <br />But, nevertheless, it's a front-end project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and email addresses).
+            </p>
+
+            <div class="partition-container__checkbox-container checkbox-container">
+              <input id="privacyAgreement" name="privacyAgreement" type="checkbox" aria-describedby="privacyAgreementInfo" class="checkbox-container__checkbox-input checkbox-input" required />
+              <label for="privacyAgreement" class="checkbox-container__label label">I agree to the Terms of the Service agreement and Privacy Policy, written above.</label>
+            </div>
+          </div>
+
+          <input class="contact-form__submit-button submit-button button button--contact" type="submit" name="submit" value="Send the letter" />
+
+        </form>
+      </section>
+
+      <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
+    </aside>
 
   </body>
 </html>

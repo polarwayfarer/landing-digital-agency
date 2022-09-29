@@ -10,7 +10,7 @@
     .p-item {
       max-width: 28em;
       margin-top: 1.35em;
-      @include lineFontParams(153%, 0.9em, 400);
+      @extend %font--common-lfw-153;
     }
 
     .contact-button {margin-top: 2.45em;}

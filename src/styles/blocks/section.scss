@@ -56,13 +56,13 @@
 
   &__title {
     width: 100%;
-    @include lineFontParams(100%, 2.4em, 700);
+    @include lineFontWeightParams(100%, 2.4em, 700);
   }
 
   &__p-item {
     max-width: 88%;
     margin-top: 2.05em;
-    @include lineFontParams(172%, 0.8em, 400);
+    @extend %font--common-lfw-172;
   }
 
   &__svg-link {

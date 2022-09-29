@@ -14,7 +14,7 @@
     color: white;
   }
 
-  &__title {@include lineFontParams(100%, 1.6em, 700);}
+  &__title {@include lineFontWeightParams(100%, 1.6em, 700);}
 
   &__contact-form {
     margin-top: 1.5em;

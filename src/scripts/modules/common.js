@@ -1,7 +1,3 @@
-'use strict';
-
-// Common functions
-
 export const isContainerOpened = elem => {
   return !elem.classList.contains('display--none');
 };
@@ -12,3 +8,12 @@ export const setBodyOverflowY = isPermitted => {
 };
 
 export const isMobileDevice = window.matchMedia('(pointer: coarse)').matches;
+
+export const setElemShown = (elem, isPermitted) => {
+  if (isPermitted) {
+    elem.classList.remove('display--none');
+  } else {
+    elem.classList.add('display--none');
+  }
+  elem.setAttribute('aria-hidden', !isPermitted);
+}

@@ -14,7 +14,7 @@
 @media screen and (pointer: fine) {
   .button--common:hover {background-color: $darkBlue;}
 }
-.button--common {
+.button--contact {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,12 +23,12 @@
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: $mediumBlue;
-  @include lineFontParams(172%, 0.8em, 600);
+  @include lineFontWeightParams(172%, 0.8em, 600);
 
   &:focus {background-color: $mediumGreen;}
 }
 
 .links-container {
-  .title {@include lineFontParams(153%, 0.9em, 700);}
-  .li-item {@include lineFontParams(100%, 0.8em, 300);}
+  .title {@include lineFontWeightParams(153%, 0.9em, 700);}
+  .li-item {@extend %font--common-lfw-100;}
 }
