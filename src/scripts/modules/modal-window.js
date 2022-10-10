@@ -10,8 +10,8 @@ const modalBackExitButton = document.querySelector('.modal-container__back-close
 const modalSvgExitButton = document.querySelector('.modal-window__svg-button');
 const modalExitButtons = [modalBackExitButton, modalSvgExitButton];
 
-
-const firstContactSourceLinkElem = document.querySelector('.modal-container__modal-window .contact-window__links-container .li-item__link');
+const blockBeforeModal = document.querySelector('.block--before-modal');
+const blockAfterModal = document.querySelector('.block--after-modal');
 
 const bodyChildrenArr = document.body.children;
 
@@ -47,7 +47,7 @@ const closeModalWindow = () => {
 
 // Add events to modal interactive elements
 
-(function() {
+(function(event) {
   contactButtons.forEach(button => {
     button.addEventListener('click', function() {
       setBodyOverflowY(false);
@@ -57,7 +57,10 @@ const closeModalWindow = () => {
       activeBeforeModalOpenedElem = document.activeElement;
       setAriaToOpenModalButton(activeBeforeModalOpenedElem, true);
 
-      modalSvgExitButton.focus();
+      setTimeout(() => {
+        modalWindow.focus();
+      }, 300);
+
     }, {passive: true});
   });
 
@@ -67,13 +70,23 @@ const closeModalWindow = () => {
     }, {passive: true});
   });
 
-  modalSvgExitButton.addEventListener('blur', function() {
-    if (event.activeElement !== firstContactSourceLinkElem
-    && event.activeElement !== activeBeforeModalOpenedElem) {
-      event.preventDefault();
-      firstContactSourceLinkElem.focus();
-    }
-  }, {passive: false});
+  // To focus on the last tabbable element of the modal window, when go from first one
+  blockBeforeModal.addEventListener('focus', function() { //not tabbable
+    if (!isContainerOpened(modalContainer)) return;
+
+    event.preventDefault();
+    modalBackExitButton.focus();
+
+  }, {passive: false, capture: true});
+
+  // To focus on the first tabbable element of the modal window, when go from last one
+  blockAfterModal.addEventListener('focus', function() {
+    if (!isContainerOpened(modalContainer)) return;
+
+    event.preventDefault();
+    modalWindow.focus();
+
+  }, {passive: false, capture: true});
 
 })();
 

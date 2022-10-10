@@ -148,7 +148,7 @@ const checkCheckbox = field => {
 
 // Check all fields before submitting and assign a mailto action to the form
 
-const checkAllContactFields = () => {
+const checkAllContactFields = event => {
   contactFields.forEach(field => checkEmptyInput(field));
 
   checkCheckbox(contactPrivacyCheckbox);

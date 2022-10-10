@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.ico">
-    <title>From Figma: Digital Agency ✦ by Yanka_InCode</title>
+    <title>From Figma: Digital Agency Landing ✦ by PolarWayfarer</title>
   </head>
 
   <body class="body-container">
@@ -23,8 +23,8 @@
         <rect x="2" y="18.5454" width="20" height="1.05" />
       </symbol>
       <symbol id="icon-exit">
-        <line x1="2" y1="22" x2="22" y2="2" stroke-width="1.5"  />
-        <line x1="22" y1="22" x2="2" y2="2" stroke-width="1.5" />
+        <line x1="2" y1="22" x2="22" y2="2" stroke-width="2"  />
+        <line x1="22" y1="22" x2="2" y2="2" stroke-width="2" />
       </symbol>
       <symbol id="icon-arrow">
         <path d="M7.29166 23.2424C7.68149 23.6336 8.31466 23.6347 8.70587 23.2448L15.081 16.8921C15.4722 16.5022 15.4733 15.8691 15.0835 15.4779C14.6936 15.0866 14.0605 15.0855 13.6693 15.4754L8.00249 21.1223L2.35558 15.4555C1.96574 15.0643 1.33258 15.0632 0.94137 15.453C0.55016 15.8428 0.549047 16.476 0.938885 16.8672L7.29166 23.2424ZM7.03784 0.998243L7 22.5347L9 22.5382L9.03784 1.00176L7.03784 0.998243Z" />
@@ -32,14 +32,84 @@
     </svg>
 
     <div class="body-container__elipse-1 elipse-1" aria-hidden="true"></div>
-    <div class="body-container__elipse-2 elipse-2" aria-hidden="true"></div>
+    <div class="body-container__elipse-2 elipse-2 block--before-modal" aria-hidden="true"></div>
 
-    <header class="body-container__header-container header-container header-container--normal">
+    <aside class="body-container__modal-container modal-container display--none" aria-hidden="true">
+
+      <section id="modalContactWindow" class="modal-container__modal-window modal-window contact-window container-wrapper" tabindex="-1" role="dialog">
+        <h2 class="contact-window__title title">Contact us</h2>
+
+        <button class="modal-window__svg-button svg-button svg-button--white svg--stroke" aria-label="Close the Contact window">
+          <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
+            <use href="#icon-exit"></use>
+          </svg>
+        </button>
+
+        <div class="contact-window__links-container links-container">
+          <h3 class="links-container__title title">Source links</h3>
+          <ul class="links-container__ul-list ul-list ul-list--row">
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://github.com/polarwayfarer/landing-digital-agency" aria-label="Go to the source code of the website on GitHub" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li class="ul-list__li-item li-item">
+              <a class="li-item__link link link--white-back" href="https://www.figma.com/community/file/1117815114206690225" aria-label="Go to the original design of the website on Figma" target="_blank" rel="noopener">Figma</a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
+          <h3 class="contact-form__title title display--hidden">Contact form</h3>
+          <p class="contact-form__required-container required-container">
+            <span class="required-container__p-item p-item p--item--info"><strong>All fields are required</strong></span>
+          </p>
+
+          <div class="contact-form__partition-container partition-container">
+            <label class="partition-container__label label" for="contactName">Name</label>
+            <br />
+            <input id="contactName" name="name" class="partition-container__name-input name-input input" type="text" maxlength="70" placeholder="..." required />
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <label class="partition-container__label label" for="contactEmail">Email</label>
+            <br />
+            <input class="partition-container__email-input email-input input" id="contactEmail" name="email" type="email" maxlength="70" placeholder="..." required />
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <div class="partition-container__label-container label-container">
+              <label class="label-container__label label" for="contactMessage" id="contactMessageLabel" tabindex='-1'>Message (not less than 50)</label>
+              <p id="contactMessageLengthInfoP" class="label-container__p-item p-item p--item--info">Characters: 0 of 1000</p>
+            </div>
+            <textarea class="partition-container__textarea textarea" id="contactMessage" name="message" minlength="50" maxlength="1000" rows="3" placeholder="..." aria-labelledby="contactMessageLabel" aria-describedby="contactMessageInfo" required></textarea>
+          </div>
+
+          <div class="contact-form__partition-container partition-container">
+            <p id="privacyAgreementInfo" class="partition-container__p-item p-item--privacy p-item--info">
+              The form uses <a class="p-item__link link" href="https://formspree.io/" aria-label="An official website of the email service Formspree" target="_blank" rel="noopener">Formspree</a> (an email service for HTML & JavaScript forms) to send the inputted data to <a class="p-item__link link" href="https://github.com/polarwayfarer" aria-label="PolarWayfarer on GitHub" target="_blank" rel="noopener">PolarWayfarer</a> (the developer of this website).
+              <br />Sending data via this form is safe on both sides through HTTPS secure communication. Also, this website doesn’t use cookies: doesn't gather, save or send any information about your device and activity.
+              <br />But, nevertheless, it's a front-end project, and I, PolarWayfarer, am not responsible for the backend (the Formspree service) and for absolute safety of sent data. So it's better not input any sensitive personal data.
+            </p>
+
+            <div class="partition-container__checkbox-container checkbox-container">
+              <input id="privacyAgreement" name="privacyAgreement" type="checkbox" aria-describedby="privacyAgreementInfo" class="checkbox-container__checkbox-input checkbox-input" required />
+              <label for="privacyAgreement" class="checkbox-container__label label">I agree to the Terms of the Service agreement and Privacy Policy, written above.</label>
+            </div>
+          </div>
+
+          <input class="contact-form__submit-button submit-button button button--contact" type="submit" name="submit" value="Send the letter" />
+
+        </form>
+      </section>
+
+      <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
+    </aside>
+
+    <header class="body-container__header-container header-container header-container--normal block--after-modal">
       <div class="container-wrapper">
 
         <a class="header-container__logo-link logo-link link" href="#" rel="nofollow noopener noreferrer">Digital Agency</a>
 
-        <button class="header-container__svg-button svg-button svg--stroke display--none" aria-controls="headerNavList" aria-pressed="false" aria-expanded="false" aria-label="Open the navigation list">
+        <button class="header-container__svg-button svg-button svg-button--black svg--stroke display--none" aria-controls="headerNavList" aria-pressed="false" aria-expanded="false" aria-label="Open the navigation list">
           <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
             <use href="#icon-menu"></use>
           </svg>
@@ -75,29 +145,29 @@
             <p class="content-container__p-item p-item">Digital Agency is your online team management tool that easy and prompt</p>
             <button class="content-container__contact-button contact-button button button--contact" aria-controls="modalContactWindow" aria-pressed="false" aria-expanded="false">Contact us</button>
           </div>
-          <img class="section__img img" height="450" width="450" src="./images/main/business-people-discussing-business-idea.svg" alt="An illustration of our team discussing great business ideas" />
+          <img class="section__img img" height="450" width="450" src="./assets/images/main/business-people-discussing-business-idea.svg" alt="An illustration of our team discussing great business ideas" />
         </section>
 
         <section class="main-container__companies-section companies-section section">
           <h2 class="companies-section__title title">Trusted by 4,000+ companies</h2>
           <ul class="companies-section__ul-list ul-list">
             <li class="ul-list__li-item li-item">
-              <img class="li-item__logo-img logo-img svg-img" height="48" width="140" alt="Spotify" src="./images/companies/spotify-logo.svg" aria-label="Spotify">
+              <img class="li-item__logo-img logo-img svg-img" height="48" width="140" alt="Spotify" src="./assets/images/companies/spotify-logo.svg" aria-label="Spotify">
             </li>
             <li class="ul-list__li-item li-item">
-              <img class="li-item__logo-img logo-img svg-img" height="48" width="123" alt="Slack" src="./images/companies/slack-logo.svg" aria-label="Slack">
+              <img class="li-item__logo-img logo-img svg-img" height="48" width="123" alt="Slack" src="./assets/images/companies/slack-logo.svg" aria-label="Slack">
             </li>
             <li class="ul-list__li-item li-item">
-              <img class="li-item__logo-img logo-img svg-img" height="49" width="165" alt="Dropbox" src="./images/companies/dropbox-logo.svg" aria-label="Dropbox">
+              <img class="li-item__logo-img logo-img svg-img" height="49" width="165" alt="Dropbox" src="./assets/images/companies/dropbox-logo.svg" aria-label="Dropbox">
             </li>
             <li class="ul-list__li-item li-item">
-              <img class="li-item__logo-img logo-img svg-img" height="48" width="98" alt="Zoom" src="./images/companies/zoom-logo.svg" aria-label="Zoom">
+              <img class="li-item__logo-img logo-img svg-img" height="48" width="98" alt="Zoom" src="./assets/images/companies/zoom-logo.svg" aria-label="Zoom">
             </li>
           </ul>
         </section>
 
         <section id="about" class="main-container__section section section--with-img section--common-top-gap about-section section--observed">
-          <img class="section__img img" height="450" width="450" src="./images/main/designer-team-working-on-creative-design.svg" alt="An illustration of our designer team in a moment of working on creative design" />
+          <img class="section__img img" height="450" width="450" src="./assets/images/main/designer-team-working-on-creative-design.svg" alt="An illustration of our designer team in a moment of working on creative design" />
           <div class="section__content-container content-container">
             <h2 class="content-container__title title">Branding & design system</h2>
             <p class="content-container__p-item p-item">Commonly used in the graphic, print & publishing industries for previewing visual layout and mockups</p>
@@ -119,7 +189,7 @@
               </svg>
             </a>
           </div>
-          <img class="section__img img" height="450" width="450" src="./images/main/businessman-analyzing-data.svg" alt="An illustration of our teammate analyzing data" />
+          <img class="section__img img" height="450" width="450" src="./assets/images/main/businessman-analyzing-data.svg" alt="An illustration of our teammate analyzing data" />
         </section>
 
         <section id="testimonials" class="main-container__testimonials-section testimonials-section section section--common-top-gap section--observed">
@@ -131,7 +201,7 @@
           <div class="section__reviews-container reviews-container">
 
             <article class="reviews-container__opinion-article opinion-article">
-              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/andrew-rathore.svg" alt="Portrait of Andrew Rathore, our testimonial" />
+              <img class="opinion-article__img img" height="132" width="132" src="./assets/images/testimonials/andrew-rathore.svg" alt="Portrait of Andrew Rathore, our testimonial" />
               <h3 class="opinion-article__title title">Andrew Rathore</h3>
               <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
@@ -139,7 +209,7 @@
             </article>
 
             <article class="reviews-container__opinion-article opinion-article">
-              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/vera-duncan.svg" alt="Portrait of Vera Duncan, our testimonial" />
+              <img class="opinion-article__img img" height="132" width="132" src="./assets/images/testimonials/vera-duncan.svg" alt="Portrait of Vera Duncan, our testimonial" />
               <h3 class="opinion-article__title title">Vera Duncan</h3>
               <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
@@ -147,7 +217,7 @@
             </article>
 
             <article class="reviews-container__opinion-article opinion-article">
-              <img class="opinion-article__img img" height="132" width="132" src="./images/testimonials/mark-smith.svg" alt="Portrait of Mark Smith, our testimonial" />
+              <img class="opinion-article__img img" height="132" width="132" src="./assets/images/testimonials/mark-smith.svg" alt="Portrait of Mark Smith, our testimonial" />
               <h3 class="opinion-article__title title">Mark Smith</h3>
               <p class="opinion-article__p-item p-item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel.
@@ -158,7 +228,7 @@
         </section>
 
         <section id="contact" class="main-container__contact-section contact-section section section--with-img section--common-top-gap section--observed">
-          <img class="section__img img" height="450" width="450" src="./images/main/customer-support.svg" alt="An illustration of our customer support in a working process" />
+          <img class="section__img img" height="450" width="450" src="./assets/images/main/customer-support.svg" alt="An illustration of our customer support in a working process" />
 
           <div class="section__content-container content-container">
             <h2 class="content-container__title title">Be a part of the next big thing</h2>
@@ -238,81 +308,15 @@
 
         <div class="footer-container__copywrite-container copywrite-container">
           <p class="copywrite-container__p-item p-item">
-            &copy; Matheus. Todos os direitos reservados
+            &copy; Designed by <a class="p-item__link link" href="https://www.figma.com/@matheusdias20">Matheus Vieira</a>.
+          </p>
+          <p class="copywrite-container__p-item p-item">
+            Coded by <a class="p-item__link link" href="https://github.com/polarwayfarer">PolarWayfarer</a>.
           </p>
         </div>
 
       </div>
     </footer>
-
-    <aside class="body-container__modal-container modal-container display--none" aria-hidden="true">
-      <section id="modalContactWindow" class="modal-container__modal-window modal-window contact-window container-wrapper">
-        <button class="modal-window__svg-button svg-button svg--stroke" aria-label="Close the Contact window">
-          <svg class="svg-button__svg-icon svg-icon" height="24" width="24" aria-hidden="true">
-            <use href="#icon-exit"></use>
-          </svg>
-        </button>
-
-        <h2 class="contact-window__title title">Contact us</h2>
-
-        <div class="contact-window__links-container links-container">
-          <h3 class="links-container__title title">Source links</h3>
-          <ul class="links-container__ul-list ul-list ul-list--row">
-            <li class="ul-list__li-item li-item">
-              <a class="li-item__link link link--white-back" href="https://github.com/yankaincode/from-figma-digital-agency" aria-label="Go to the source code of the website on GitHub" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li class="ul-list__li-item li-item">
-              <a class="li-item__link link link--white-back" href="https://www.figma.com/community/file/1117815114206690225" aria-label="Go to the original design of the website on Figma" target="_blank" rel="noopener">Figma</a>
-            </li>
-          </ul>
-        </div>
-
-        <form class="contact-window__contact-form contact-form" name="contactForm" action="https://formspree.io/f/mzbwpyjp" method="post" novalidate autocomplete="off">
-          <h3 class="contact-form__title title display--hidden">Contact form</h3>
-          <p class="contact-form__required-container required-container">
-            <span class="required-container__p-item p-item p--item--info"><strong>All fields are required</strong></span>
-          </p>
-
-          <div class="contact-form__partition-container partition-container">
-            <label class="partition-container__label label" for="contactName">Name</label>
-            <br />
-            <input id="contactName" name="name" class="partition-container__name-input name-input input" type="text" maxlength="70" placeholder="..." required />
-          </div>
-
-          <div class="contact-form__partition-container partition-container">
-            <label class="partition-container__label label" for="contactEmail">Email</label>
-            <br />
-            <input class="partition-container__email-input email-input input" id="contactEmail" name="email" type="email" maxlength="70" placeholder="..." required />
-          </div>
-
-          <div class="contact-form__partition-container partition-container">
-            <div class="partition-container__label-container label-container">
-              <label class="label-container__label label" for="contactMessage" id="contactMessageLabel" tabindex='-1'>Message (not less than 50)</label>
-              <p id="contactMessageLengthInfoP" class="label-container__p-item p-item p--item--info">Characters: 0 of 1000</p>
-            </div>
-            <textarea class="partition-container__textarea textarea" id="contactMessage" name="message" minlength="50" maxlength="1000" rows="3" placeholder="..." aria-labelledby="contactMessageLabel" aria-describedby="contactMessageInfo" required></textarea>
-          </div>
-
-          <div class="contact-form__partition-container partition-container">
-            <p id="privacyAgreementInfo" class="partition-container__p-item p-item--privacy p-item--info">
-              The form uses <a class="p-item__link link" href="https://formspree.io/" aria-label="An official website of the email service Formspree" target="_blank" rel="noopener">Formspree</a> (a form backend, API, and email service for HTML & JavaScript forms) to send the inputted data to <a class="p-item__link link" href="https://github.com/yankaincode" aria-label="Yanka_InCode on GitHub" target="_blank" rel="noopener">Yanka_InCode</a> (the developer of this website).
-              <br />Sending data via this form is safe on both sides through HTTPS secure communication. Also, this website doesn’t use cookies: doesn't gather, save or send any information about your device and activity.
-              <br />But, nevertheless, it's a front-end project, and I, Yanka_inCode, am not responsible for the server side (the API) and for absolute safety of data appended by yourself. So, it's better not input any private data, by which anybody known by you could be identified (real names and email addresses).
-            </p>
-
-            <div class="partition-container__checkbox-container checkbox-container">
-              <input id="privacyAgreement" name="privacyAgreement" type="checkbox" aria-describedby="privacyAgreementInfo" class="checkbox-container__checkbox-input checkbox-input" required />
-              <label for="privacyAgreement" class="checkbox-container__label label">I agree to the Terms of the Service agreement and Privacy Policy, written above.</label>
-            </div>
-          </div>
-
-          <input class="contact-form__submit-button submit-button button button--contact" type="submit" name="submit" value="Send the letter" />
-
-        </form>
-      </section>
-
-      <button class="modal-container__back-close-button back-close-button" aria-label="Close the Contact window"></button>
-    </aside>
 
   </body>
 </html>

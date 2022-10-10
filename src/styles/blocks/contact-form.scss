@@ -40,7 +40,6 @@
 
     &__label,
     .label-container__label {
-      max-width: 60%;
       padding: 0.2em;
       @include lineFontWeightParams(140%, 0.9em, 500);
     }
@@ -63,11 +62,10 @@
 
   .label-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     &__p-item {
       margin-right: 0.2em;
+      margin-bottom: 0.3em;
       margin-left: 0.2em;
       @include lineFontWeightParams(100%, 0.7em, 500);
     }
@@ -102,6 +100,24 @@
   }
 }
 
+@media screen and (min-width: 501px) {
+  .partition-container {
+    &__label,
+    .label-container__label {
+      max-width: 60%;
+    }
+  }
+
+  .label-container {
+    justify-content: space-between;
+    align-items: center;
+
+    &__p-item {
+      align-self: flex-end;
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .label-container {
     flex-direction: column;
@@ -110,7 +126,7 @@
 
     &__p-item {
       align-self: flex-end;
-      margin-bottom: 0.3em;
+      margin-top: 0.2em;
     }
   }
 }

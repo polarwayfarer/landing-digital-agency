@@ -3,6 +3,7 @@
 const body = document.body;
 const pageOnLoadContainer = document.querySelector('.page-on-load-container');
 
+body.style.overflowY = 'hidden';
 window.addEventListener('load', pageOnLoad, {passive: true});
 
 function pageOnLoad() {
@@ -13,7 +14,6 @@ function pageOnLoad() {
   }, 3500);
 
   setTimeout(() => {
-    body.style.overflowY = 'auto';
     pageOnLoadContainer.remove();
     window.removeEventListener('load', pageOnLoad, {passive: true});
     body.style.overflowY = 'auto';

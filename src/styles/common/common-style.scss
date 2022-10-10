@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 .img,
 .svg-img {
   pointer-events: none;
-  animation: $animaFirstAppear;
+  animation: $animationFirstAppear;
 
   &::before {
     display: block;
@@ -79,13 +79,18 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
-  &-button {
-    stroke: $mediumBlack;
-    background-color: unset;
-  }
+  &-button {background-color: unset;}
+
+  &-button--black {stroke: $mediumBlack;}
+  &-button--white {stroke: white;}
 
   &--fill:focus {fill: $mediumRed;}
   &--stroke:focus {stroke: $mediumRed;}
+
+  &--fill,
+  &--stroke {
+    &:focus {background-color: $whiteBack;}
+  }
 }
 
 .input,

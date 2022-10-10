@@ -15,7 +15,7 @@ export const isValid = (inputTypeStr, inputValue) => {
   return regExpPrecept.test(inputValue);
 };
 
-export const manageKeydown = (inputTypeStr) => {
+export const manageKeydown = (event, inputTypeStr) => {
   let regExpLetters;
 
   switch(inputTypeStr) {

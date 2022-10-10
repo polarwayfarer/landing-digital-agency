@@ -32,14 +32,14 @@ const closeMenu = () => {
   headerContainer.classList.remove('header-container--menu-opened');
   setElemShown(headerNavContainer, false);
 
-  if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
+  if (Math.round(window.scrollY) > 50) headerContainer.classList.add('header-container--lesser');
 
-  setMenuButtonAttribs(headerMenuButton, false);
+  setMenuButtonAttribs(headerMenuButton, false);  
   setBodyOverflowY(true);
 };
 
 const toggleHeaderStyle = () => {
-  if (screenMax700.matches && isHeaderMenuOpened())
+  if (screenMax700.matches && isHeaderMenuOpened() && headerContainer.classList.contains('header-container--menu-opened'))
     closeMenu();
 
   if (screenMax700.matches) {
@@ -68,7 +68,7 @@ headerMenuButton.addEventListener('click', function() {
   }
 
   headerContainer.classList.toggle('header-container--lesser',
-    !isHeaderMenuOpened() && window.pageYOffset > 50
+    !isHeaderMenuOpened() && Math.round(window.scrollY) > 50
   );
 
   setMenuButtonAttribs(this, isHeaderMenuOpened());
@@ -78,10 +78,8 @@ headerMenuButton.addEventListener('click', function() {
 // Control of header's menu style on scroll
 
 window.addEventListener('scroll', function() {
-  let scrollHeightPos = window.pageYOffset;
+  let scrollHeightPos = Math.round(window.scrollY);
 
   headerContainer.classList.toggle('header-container--normal', scrollHeightPos <= 50);
   headerContainer.classList.toggle('header-container--lesser', scrollHeightPos > 50);
 }, {passive: true});
-
-if (window.pageYOffset > 50) headerContainer.classList.add('header-container--lesser');
