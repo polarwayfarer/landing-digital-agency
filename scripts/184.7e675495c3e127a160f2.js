@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkfrom_figma_digital_agency=self.webpackChunkfrom_figma_digital_agency||[]).push([[184],{184:function(a,i,e){e.r(i)}}]);

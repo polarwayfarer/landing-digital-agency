@@ -1,0 +1,2 @@
+(self.webpackChunklanding_digital_agency=self.webpackChunklanding_digital_agency||[]).push([[283],{283:function(){var e=document.body,o=document.querySelector(".page-on-load-container");window.addEventListener("load",(function n(){0!==window.scrollTop&&window.scrollTo(0,0);setTimeout((function(){o.classList.add("page-on-load-container--fade-out")}),3500),setTimeout((function(){e.style.overflowY="auto",o.remove(),window.removeEventListener("load",n,{passive:!0}),e.style.overflowY="auto"}),4500)}),{passive:!0})}}]);
+//# sourceMappingURL=283.b6ecef227e7e9fa09044.js.map
